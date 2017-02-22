@@ -5,9 +5,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 @Entity
 public class Movie {
 
+	//This is a comment
+	
+	//This is another comment
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
