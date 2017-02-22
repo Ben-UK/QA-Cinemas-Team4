@@ -6,10 +6,16 @@
         http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
    <persistence-unit name="primary">
       <jta-data-source>java:jboss/datasources/CinemaDS</jta-data-source>
+      <class>com.qa.cinema.persistence.Activity</class>
+      <class>com.qa.cinema.persistence.Booking</class>
+      <class>com.qa.cinema.persistence.Cinema</class>
+      <class>com.qa.cinema.persistence.Film</class>
+      <class>com.qa.cinema.persistence.Showing</class>
+      <class>com.qa.cinema.persistence.Ticket</class>
       <properties>
          <!-- Properties for Hibernate -->
          <property name="hibernate.hbm2ddl.auto" value="create-drop" />
-         <property name="hibernate.show_sql" value="false" />
+         <property name="hibernate..show_sql" value="false" />
       </properties>
    </persistence-unit>
 </persistence>
