@@ -5,27 +5,25 @@ import static org.junit.Assert.*;
 import java.util.Calendar;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import com.qa.cinema.rest.FilmEndpoint;
 import com.qa.cinema.service.FilmService;
 
+@RunWith(MockitoJUnitRunner.class)
 public class FilmEndpointTest {
 	
 	@InjectMocks
 	private FilmEndpoint filmEndpoint;
 	
-	//convert calendar object to string and do "" + ""
-	Calendar c = Calendar.getInstance();
-	c.set(2017,2,22); //2017,2,23);
+	private static final String MOCKSTRING = "[{\"filmID\": 1,\"certification\": \"12A\",\"description\": \"Test\",\"releaseDate\": \" 19901212 \",\"title\": \"test1\"}]";
 	
-	
-	private static final String MOCKSTRING = "[{\"id\": 1,\"certification\": \"12A\",\"description\": \"Test\",\"releaseDate\": \" "+ c.toString() + "\",\"title\": \"test1\"}]";
-	
-	private static final String MOCK_DELETE_MESSAGE = "{\"message\": \"film sucessfully removed\"}";;
-	
+	private static final String MOCK_DELETE_MESSAGE = "{\"message\": \"film sucessfully removed\"}";
+		
 	@Mock
 	private FilmService mockService;
 	
