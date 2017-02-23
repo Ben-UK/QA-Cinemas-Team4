@@ -21,7 +21,7 @@ public class CinemaEndPoint {
 	@Path("/json")
 	@Produces({"application/json"})
 	public String getCinemaAsJson(){
-		return cinemaService.getAllCinemas();
+		return cinemaService.listAllCinemas();
 	}
 	
 	@GET

@@ -27,9 +27,9 @@ public class CinemaEndpointTest {
 	
 	@Test
 	public void testGetAllCinemasAreReturnedCorrectly() {
-		Mockito.when(cinemaService.getAllCinemas()).thenReturn(MOCKSTRING);
+		Mockito.when(cinemaService.listAllCinemas()).thenReturn(MOCKSTRING);
 		String cinemaString = subject.getCinemaAsJson();
-		Mockito.verify(cinemaService).getAllCinemas();
+		Mockito.verify(cinemaService).listAllCinemas();
 		Assert.assertEquals(MOCKSTRING, cinemaString);
 	}
 
@@ -51,10 +51,33 @@ public class CinemaEndpointTest {
 	
 	@Test
 	public void testDeleteCinemaCallsDeleteServiceWithGivenCinemaId() {
-		Mockito.when(cinemaService.deleteCinema(new Long(1))).thenReturn(MOCKSTRING);
+		Mockito.when(cinemaService.deleteCinema(new Long(1))).thenReturn(MOCK_DELETE_MESSAGE);
 		String deleteMessage = subject.deleteCinemaFromFranchise(new Long(1));
 		Mockito.verify(cinemaService).deleteCinema(new Long(1));
 		Assert.assertEquals(MOCK_DELETE_MESSAGE, deleteMessage);
 	}
+	
+	@Test
+	public void testGetAllCurrentlyShowingFilmsReturnedCorrectly() {
+		Mockito.when(cinemaService.getAllCurrentlyShowingFilms()).thenReturn(MOCKSTRING);
+		String cinemaString = subject.getAllCurrentlyShowingFilmsAsJson();
+		Mockito.verify(cinemaService).getAllCurrentlyShowingFilms();
+		Assert.assertEquals(MOCKSTRING, cinemaString);
+	}
 
+	@Test
+	public void testGetAllCurrentlyShowingActivitiesReturnedCorrectly() {
+		Mockito.when(cinemaService.getAllCurrentlyShowingActivities()).thenReturn(MOCKSTRING);
+		String cinemaString = subject.getAllCurrentlyShowingActivitiesAsJson();
+		Mockito.verify(cinemaService).getAllCurrentlyShowingActivities();
+		Assert.assertEquals(MOCKSTRING, cinemaString);
+	}
+
+	@Test
+	public void testGetAllFutureReleasesReturnedCorrectly() {
+		Mockito.when(cinemaService.getAllFutureReleases()).thenReturn(MOCKSTRING);
+		String cinemaString = subject.getAllFutureReleasesAsJson();
+		Mockito.verify(cinemaService).getAllFutureReleases();
+		Assert.assertEquals(MOCKSTRING, cinemaString);
+	}
 }
