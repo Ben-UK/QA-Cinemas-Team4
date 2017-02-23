@@ -2,8 +2,6 @@ package com.qa.cinema.rest.test;
 
 import static org.junit.Assert.*;
 
-import java.util.Calendar;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -21,7 +19,7 @@ public class FilmEndpointTest {
 	private FilmEndpoint filmEndpoint;
 	
 	private static final String MOCKSTRING = "[{\"filmID\": 1,\"certification\": \"12A\",\"description\": \"Test\",\"releaseDate\": \" 19901212 \",\"title\": \"test1\"}]";
-	
+
 	private static final String MOCK_DELETE_MESSAGE = "{\"message\": \"film sucessfully removed\"}";
 		
 	@Mock

@@ -16,7 +16,7 @@ import com.qa.cinema.service.FilmService;
 public class FilmEndpoint {
 	
 	@Inject
-	private DBFilmService filmService; //FilmService
+	private FilmService filmService; //FilmService
 	
 	@GET
 	@Path("/json")
