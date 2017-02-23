@@ -27,6 +27,11 @@ public class Cinema implements Serializable {
 	public Cinema() {
 	}
 
+	public Cinema(String location) {
+		super();
+		this.location = location;
+	}
+
 	public Long getCinemaID() {
 		return this.cinemaID;
 	}
