@@ -6,11 +6,10 @@ import javax.enterprise.inject.Alternative;
 @ApplicationScoped
 @Alternative
 public class MapMovieService implements MovieService {
-	
-	
 
 	@Override
 	public String listAllMovies() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
