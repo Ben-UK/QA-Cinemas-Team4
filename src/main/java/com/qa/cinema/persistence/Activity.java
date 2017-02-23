@@ -3,8 +3,6 @@ package com.qa.cinema.persistence;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Calendar;
-import java.util.Set;
-
 
 /**
  * The persistent class for the activity database table.
@@ -29,11 +27,16 @@ public class Activity implements Serializable {
 
 	private String title;
 
-	//bi-directional many-to-one association to Showing
-	@OneToMany(mappedBy="activity")
-	private Set<Showing> showings;
-
 	public Activity() {
+	}
+
+	public Activity(String title, String description,
+			Calendar releaseDate, String certification) {
+		super();
+		this.certification = certification;
+		this.description = description;
+		this.releaseDate = releaseDate;
+		this.title = title;
 	}
 
 	public Long getActivityID() {
@@ -75,27 +78,4 @@ public class Activity implements Serializable {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
-	public Set<Showing> getShowings() {
-		return this.showings;
-	}
-
-	public void setShowings(Set<Showing> showings) {
-		this.showings = showings;
-	}
-
-	public Showing addShowing(Showing showing) {
-		getShowings().add(showing);
-		showing.setActivity(this);
-
-		return showing;
-	}
-
-	public Showing removeShowing(Showing showing) {
-		getShowings().remove(showing);
-		showing.setActivity(null);
-
-		return showing;
-	}
-
 }
