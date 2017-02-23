@@ -32,20 +32,32 @@ public class DBFilmService implements FilmService {
 
 	@Override
 	public String createNewFilm(String film) {
-		// TODO Auto-generated method stub
-		return null;
+		Film newFilm = util.getObjectForJSON(film, Film.class);
+		em.persist(newFilm);
+		return "{\"message\": \"film sucessfully created\"}";
 	}
 
 	@Override
 	public String updateFilm(Long filmID, String film) {
-		// TODO Auto-generated method stub
-		return null;
+		Film updateFilm = util.getObjectForJSON(film, Film.class);
+		Film filmInDB = findFilm(new Long(filmID));
+		if (filmInDB != null) {
+			filmInDB = updateFilm;
+			em.merge(film);
+		}
+		return  "{\"message\": \"film sucessfully updated\"}";
 	}
 
 	@Override
 	public String deleteFilm(Long filmID) {
-		// TODO Auto-generated method stub
-		return null;
+		Film filmInDB = findFilm(new Long(filmID));
+		if (filmInDB != null) {
+			em.remove(filmInDB);
+		}
+		return  "{\"message\": \"film sucessfully deleted\"}";
 	}
-
+	
+	private Film findFilm(Long filmID) {
+		return em.find(Film.class, filmID);
+	}
 }

@@ -19,9 +19,10 @@ public class FilmEndpointTest {
 	
 	//convert calendar object to string and do "" + ""
 	Calendar c = Calendar.getInstance();
-	c.set(2017,2,22);
+	c.set(2017,2,22); //2017,2,23);
 	
-	private static final String MOCKSTRING = "[{\"id\": 1,\"certification\": \"12A\",\"description\": \"Test\",\"releaseDate\": \" "+ c + "\",\"title\": \"test1\"}]";
+	
+	private static final String MOCKSTRING = "[{\"id\": 1,\"certification\": \"12A\",\"description\": \"Test\",\"releaseDate\": \" "+ c.toString() + "\",\"title\": \"test1\"}]";
 	
 	private static final String MOCK_DELETE_MESSAGE = "{\"message\": \"film sucessfully removed\"}";;
 	

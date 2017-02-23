@@ -35,15 +35,15 @@ public class FilmEndpoint {
 	@PUT
 	@Path("/json/{id}")
 	@Produces({ "application/json" })
-	public String updateFilm(@PathParam("id") Long filmId, String filmJson) {
-		return filmService.updateFilm(filmId,filmJson);
+	public String updateFilm(@PathParam("id") Long filmID, String filmJson) {
+		return filmService.updateFilm(filmID,filmJson);
 	}
 	
 	@DELETE
 	@Path("/json/{id}")
 	@Produces({ "application/json" })
-	public String deleteFilm(@PathParam("id") Long filmId) {
-		return filmService.deleteFilm(filmId);
+	public String deleteFilm(@PathParam("id") Long filmID) {
+		return filmService.deleteFilm(filmID);
 	}
 
 }
