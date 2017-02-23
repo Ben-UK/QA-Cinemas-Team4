@@ -35,6 +35,13 @@ public class Film implements Serializable {
 
 	public Film() {
 	}
+	
+	public Film(String certification, String description, Calendar releaseDate, String title) {
+		this.certification = certification;
+		this.description = description;
+		this.releaseDate = releaseDate;
+		this.title = title;
+	}
 
 	public Long getFilmID() {
 		return this.filmID;
