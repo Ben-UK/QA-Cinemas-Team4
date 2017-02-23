@@ -29,6 +29,15 @@ public class Activity implements Serializable {
 
 	public Activity() {
 	}
+	
+	public Activity(String title, String description,
+			Calendar releaseDate, String certification) {
+		super();
+		this.certification = certification;
+		this.description = description;
+		this.releaseDate = releaseDate;
+		this.title = title;
+	}
 
 	public Activity(String title, String description,
 			Calendar releaseDate, String certification) {
