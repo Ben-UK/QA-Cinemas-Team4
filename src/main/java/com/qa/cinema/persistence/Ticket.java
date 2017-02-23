@@ -18,6 +18,7 @@ public class Ticket implements Serializable {
 	private Long ticketID;
 
 	private String ticketType;
+	
 
 	//bi-directional many-to-one association to Booking
 	@ManyToOne
@@ -25,6 +26,12 @@ public class Ticket implements Serializable {
 
 	public Ticket() {
 	}
+	
+	public Ticket(String ticketType) {
+		this.ticketType = ticketType;
+	}
+
+
 
 	public Long getTicketID() {
 		return this.ticketID;
@@ -49,5 +56,7 @@ public class Ticket implements Serializable {
 	public void setBooking(Booking booking) {
 		this.booking = booking;
 	}
+	
+	
 
 }
