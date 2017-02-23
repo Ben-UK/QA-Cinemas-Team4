@@ -1,6 +1,6 @@
 package com.qa.cinema.rest.test;
 
-import static org.junit.Assert.fail;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -10,7 +10,6 @@ import org.mockito.runners.MockitoJUnitRunner;
 import com.qa.cinema.rest.CinemaEndPoint;
 import com.qa.cinema.service.CinemaService;
 
-import junit.framework.Assert;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CinemaEndpointTest {
