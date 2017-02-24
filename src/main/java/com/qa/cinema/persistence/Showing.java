@@ -43,6 +43,16 @@ public class Showing implements Serializable {
 
 	public Showing() {
 	}
+	
+	public Showing(Long showingID, Calendar datetime, int seatCount, Set<Booking> bookings, Activity activity, Cinema cinema, Film film){
+		this.showingID = showingID;
+		this.datetime = datetime;
+		this.seatCount = seatCount;
+		this.bookings = bookings;
+		this.activity = activity;
+		this.cinema = cinema;
+		this.film = film;
+	}
 
 	public Long getShowingID() {
 		return this.showingID;
