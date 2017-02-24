@@ -48,37 +48,4 @@ public class FilmTest {
 		Calendar releaseDate = film.getReleaseDate();
 		assertEquals(releaseDate,newReleaseDate);
 	}
-	
-	@Test
-	public void testSetGetShowings() {
-		Film film = new Film();
-		Calendar dateTime = Calendar.getInstance();
-		dateTime.set(2017, 2, 23, 12, 30);
-		Showing showing1 = new Showing(); //new Showing(new Long(0), new Long(1), new Long(2), dateTime, 50);
-		Set<Showing> showings = new HashSet<Showing>();
-		showings.add(showing1);
-		film.setShowings(showings);
-		Set<Showing> returnedShowing = film.getShowings();
-		assertEquals(returnedShowing, showings);
-	}
-	
-	@Test
-	public void testAddShowing() {
-		Film film = new Film();
-		film.setTitle("Harry Potter");
-		Showing showing = new Showing();
-		film.addShowing(showing);
-		Film returnedFilm = showing.getFilm();
-		assertEquals(film.getTitle(), returnedFilm.getTitle());
-	}
-	
-	@Test
-	public void testRemoveShowing() {
-		Film film = new Film();
-		film.setTitle("Harry Potter");
-		Showing showing = new Showing();
-		film.addShowing(showing);
-		film.removeShowing(showing);
-	}
-
 }
