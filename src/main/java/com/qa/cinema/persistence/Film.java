@@ -30,8 +30,8 @@ public class Film implements Serializable {
 	private String title;
 
 	//bi-directional many-to-one association to Showing
-	@OneToMany(mappedBy="film")
-	private Set<Showing> showings;
+//	@OneToMany(mappedBy="film")
+//	private Set<Showing> showings;
 
 	public Film() {
 	}
@@ -83,26 +83,26 @@ public class Film implements Serializable {
 		this.title = title;
 	}
 
-	public Set<Showing> getShowings() {
-		return this.showings;
-	}
-
-	public void setShowings(Set<Showing> showings) {
-		this.showings = showings;
-	}
-
-	public Showing addShowing(Showing showing) {
-		getShowings().add(showing);
-		showing.setFilm(this);
-
-		return showing;
-	}
-
-	public Showing removeShowing(Showing showing) {
-		getShowings().remove(showing);
-		showing.setFilm(null);
-
-		return showing;
-	}
+//	public Set<Showing> getShowings() {
+//		return this.showings;
+//	}
+//
+//	public void setShowings(Set<Showing> showings) {
+//		this.showings = showings;
+//	}
+//
+//	public Showing addShowing(Showing showing) {
+//		getShowings().add(showing);
+//		showing.setFilm(this);
+//
+//		return showing;
+//	}
+//
+//	public Showing removeShowing(Showing showing) {
+//		getShowings().remove(showing);
+//		showing.setFilm(null);
+//
+//		return showing;
+//	}
 
 }

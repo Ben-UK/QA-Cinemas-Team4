@@ -3,6 +3,7 @@ package com.qa.cinema.persistence;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Calendar;
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -42,13 +43,14 @@ public class Showing implements Serializable {
 	private Film film;
 
 	public Showing() {
+		this.bookings = new HashSet<Booking>();
 	}
 	
-	public Showing(Long showingID, Calendar datetime, int seatCount, Set<Booking> bookings, Activity activity, Cinema cinema, Film film){
-		this.showingID = showingID;
+	public Showing(Calendar datetime, int seatCount,Activity activity, Cinema cinema, Film film){
+		
 		this.datetime = datetime;
 		this.seatCount = seatCount;
-		this.bookings = bookings;
+		this.bookings = new HashSet<Booking>();
 		this.activity = activity;
 		this.cinema = cinema;
 		this.film = film;

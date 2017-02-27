@@ -14,7 +14,7 @@ import com.qa.cinema.util.JSONUtil;
 
 @Stateless
 @Default
-public class ActivityServiceDBImpl implements ActivityService{
+public class DBActivityService implements ActivityService{
 	
 	@PersistenceContext(unitName = "primary")
 	private EntityManager em;
