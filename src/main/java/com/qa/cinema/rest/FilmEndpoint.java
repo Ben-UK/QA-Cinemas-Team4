@@ -9,7 +9,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import com.qa.cinema.service.DBFilmService;
 import com.qa.cinema.service.FilmService;
 
 @Path("/film")
@@ -28,15 +27,15 @@ public class FilmEndpoint {
 	@POST
 	@Path("/json")
 	@Produces({ "application/json" })
-	public String createNewFilm(String filmJson) {
-		return filmService.createNewFilm(filmJson);
+	public String createNewFilm(String filmJSON) {
+		return filmService.createNewFilm(filmJSON);
 	}
 	
 	@PUT
 	@Path("/json/{id}")
 	@Produces({ "application/json" })
-	public String updateFilm(@PathParam("id") Long filmID, String filmJson) {
-		return filmService.updateFilm(filmID,filmJson);
+	public String updateFilm(@PathParam("id") Long filmID, String filmJSON) {
+		return filmService.updateFilm(filmID,filmJSON);
 	}
 	
 	@DELETE

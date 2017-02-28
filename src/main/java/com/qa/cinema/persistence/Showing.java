@@ -21,14 +21,14 @@ public class Showing implements Serializable {
 	private Long showingID;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	private Calendar datetime;
+	private Calendar dateTime;
 
 	@Column(name="SEAT_COUNT")
-	private int seatCount;
+	private static int seatCount = 100;
 
 	//bi-directional many-to-one association to Booking
-	@OneToMany(mappedBy="showing")
-	private Set<Booking> bookings;
+//	@OneToMany(mappedBy="showing")
+	//private Set<Booking> bookings = new HashSet<Booking>();
 
 	//bi-directional many-to-one association to Activity
 	@ManyToOne
@@ -43,14 +43,13 @@ public class Showing implements Serializable {
 	private Film film;
 
 	public Showing() {
-		this.bookings = new HashSet<Booking>();
+		//this.bookings = new HashSet<Booking>();
 	}
 	
-	public Showing(Calendar datetime, int seatCount,Activity activity, Cinema cinema, Film film){
-		
-		this.datetime = datetime;
-		this.seatCount = seatCount;
-		this.bookings = new HashSet<Booking>();
+	public Showing(Calendar dateTime,Activity activity, 
+			Cinema cinema, Film film){
+		this.dateTime = dateTime;
+		//this.bookings = new HashSet<Booking>();
 		this.activity = activity;
 		this.cinema = cinema;
 		this.film = film;
@@ -64,43 +63,39 @@ public class Showing implements Serializable {
 		this.showingID = showingID;
 	}
 
-	public Calendar getDatetime() {
-		return this.datetime;
+	public Calendar getDateTime() {
+		return this.dateTime;
 	}
 
-	public void setDatetime(Calendar datetime) {
-		this.datetime = datetime;
+	public void setDateTime(Calendar dateTime) {
+		this.dateTime = dateTime;
 	}
 
 	public int getSeatCount() {
-		return this.seatCount;
+		return seatCount;
 	}
 
-	public void setSeatCount(int seatCount) {
-		this.seatCount = seatCount;
-	}
+//	public Set<Booking> getBookings() {
+//		return this.bookings;
+//	}
+//
+//	public void setBookings(Set<Booking> bookings) {
+//		this.bookings = bookings;
+//	}
 
-	public Set<Booking> getBookings() {
-		return this.bookings;
-	}
-
-	public void setBookings(Set<Booking> bookings) {
-		this.bookings = bookings;
-	}
-
-	public Booking addBooking(Booking booking) {
-		getBookings().add(booking);
-		booking.setShowing(this);
-
-		return booking;
-	}
-
-	public Booking removeBooking(Booking booking) {
-		getBookings().remove(booking);
-		booking.setShowing(null);
-
-		return booking;
-	}
+//	public Booking addBooking(Booking booking) {
+//		getBookings().add(booking);
+//		booking.setShowing(this);
+//
+//		return booking;
+//	}
+//
+//	public Booking removeBooking(Booking booking) {
+//		getBookings().remove(booking);
+//		booking.setShowing(null);
+//
+//		return booking;
+//	}
 
 	public Activity getActivity() {
 		return this.activity;

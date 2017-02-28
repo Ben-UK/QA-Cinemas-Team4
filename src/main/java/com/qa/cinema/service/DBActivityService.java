@@ -22,6 +22,7 @@ public class DBActivityService implements ActivityService{
 	@Inject
 	private JSONUtil util;
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public String listAllActivities() {
 		Query query = em.createQuery("SELECT a FROM Activity a");
@@ -33,7 +34,7 @@ public class DBActivityService implements ActivityService{
 	public String createActivity(String activityJSON) {
 		Activity newActivity = util.getObjectForJSON(activityJSON, Activity.class);
 		em.persist(newActivity);
-		return activityJSON;
+		return "{\"message\": \"Activity sucessfully created\"}";
 	}
 
 	@Override

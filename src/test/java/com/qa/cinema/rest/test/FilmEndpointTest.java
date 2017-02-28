@@ -18,7 +18,7 @@ public class FilmEndpointTest {
 	@InjectMocks
 	private FilmEndpoint filmEndpoint;
 	
-	private static final String MOCKSTRING = "[{\"filmID\": 1,\"certification\": \"12A\",\"description\": \"Test\",\"releaseDate\": \" 19901212 \",\"title\": \"test1\"}]";
+	private static final String MOCKSTRING = "[{\"filmID\": 1,\"certification\": \"12A\",\"description\": \"Test\",\"releaseDate\": \" {\"year\":2017,\"month\":1,\"dayOfMonth\":24} \",\"title\": \"test1\"}]";
 
 	private static final String MOCK_DELETE_MESSAGE = "{\"message\": \"film sucessfully removed\"}";
 		
@@ -51,10 +51,10 @@ public class FilmEndpointTest {
 	
 	@Test
 	public void testDeleteFilm() {
-		Mockito.when(mockService.deleteFilm(new Long(1))).thenReturn(MOCKSTRING);
+		Mockito.when(mockService.deleteFilm(new Long(1))).thenReturn(MOCK_DELETE_MESSAGE);
 		String filmString = filmEndpoint.deleteFilm(new Long(1));
 		Mockito.verify(mockService).deleteFilm(new Long(1));
-		assertEquals(MOCKSTRING, filmString);
+		assertEquals(MOCK_DELETE_MESSAGE, filmString);
 	}
 
 }

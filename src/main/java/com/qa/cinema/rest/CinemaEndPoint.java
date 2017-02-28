@@ -23,27 +23,27 @@ public class CinemaEndPoint {
 	public String getCinemaAsJson(){
 		return cinemaService.listAllCinemas();
 	}
-	
-	@GET
-	@Path("/json")
-	@Produces({"application/json"})
-	public String getAllCurrentlyShowingFilmsAsJson(){
-		return cinemaService.getAllCurrentlyShowingFilms();
-	}
-	
-	@GET
-	@Path("/json")
-	@Produces({"application/json"})
-	public String getAllCurrentlyShowingActivitiesAsJson(){
-		return cinemaService.getAllCurrentlyShowingActivities();
-	}
-	
-	@GET
-	@Path("/json")
-	@Produces({"application/json"})
-	public String getAllFutureReleasesAsJson(){
-		return cinemaService.getAllFutureReleases();
-	}
+//	
+//	@GET
+//	@Path("/json")
+//	@Produces({"application/json"})
+//	public String getAllCurrentlyShowingFilmsAsJson(){
+//		return cinemaService.getAllCurrentlyShowingFilms();
+//	}
+//	
+//	@GET
+//	@Path("/json")
+//	@Produces({"application/json"})
+//	public String getAllCurrentlyShowingActivitiesAsJson(){
+//		return cinemaService.getAllCurrentlyShowingActivities();
+//	}
+//	
+//	@GET
+//	@Path("/json")
+//	@Produces({"application/json"})
+//	public String getAllFutureReleasesAsJson(){
+//		return cinemaService.getAllFutureReleases();
+//	}
 	
 	@POST
 	@Path("/json")
@@ -55,8 +55,8 @@ public class CinemaEndPoint {
 	@PUT
 	@Path("/json/{id}")
 	@Produces({"application/json"})
-	public String updateCinemaFromFranchise(@PathParam("id") Long showingID, String cinemaLocation){
-		return cinemaService.updateCinema(showingID, cinemaLocation);
+	public String updateCinemaFromFranchise(@PathParam("id") Long cinemaID, String cinemaLocation){
+		return cinemaService.updateCinema(cinemaID, cinemaLocation);
 	}
 	
 	@DELETE

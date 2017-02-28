@@ -2,6 +2,7 @@ package com.qa.cinema.rest.test;
 
 import static org.junit.Assert.*;
 
+import org.hamcrest.Matcher;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -48,4 +49,13 @@ public class TickectEndPointTest {
 		assertEquals(MOCKSTRING, ticketString);
 	}
 	
+	@Test
+	public void testShowTicket(){
+		Mockito.when(mockService.showTicket()).thenReturn(MOCKSTRING);
+		String ticketString = subject.getTicket();
+		System.out.println(ticketString);
+		Mockito.verify(mockService).showTicket();
+
+		assertEquals(MOCKSTRING, ticketString);
+	}
 }

@@ -31,19 +31,19 @@ public class DBFilmService implements FilmService {
 	}
 
 	@Override
-	public String createNewFilm(String film) {
-		Film newFilm = util.getObjectForJSON(film, Film.class);
+	public String createNewFilm(String filmJSON) {
+		Film newFilm = util.getObjectForJSON(filmJSON, Film.class);
 		em.persist(newFilm);
 		return "{\"message\": \"film sucessfully created\"}";
 	}
 
 	@Override
-	public String updateFilm(Long filmID, String film) {
-		Film updateFilm = util.getObjectForJSON(film, Film.class);
+	public String updateFilm(Long filmID, String filmJSON) {
+		Film updateFilm = util.getObjectForJSON(filmJSON, Film.class);
 		Film filmInDB = findFilm(new Long(filmID));
 		if (filmInDB != null) {
 			filmInDB = updateFilm;
-			em.merge(film);
+			em.merge(filmInDB);
 		}
 		return  "{\"message\": \"film sucessfully updated\"}";
 	}

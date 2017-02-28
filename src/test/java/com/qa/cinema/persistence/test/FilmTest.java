@@ -3,19 +3,15 @@ package com.qa.cinema.persistence.test;
 import static org.junit.Assert.*;
 
 import java.util.Calendar;
-import java.util.HashSet;
-import java.util.Set;
-
+import java.util.GregorianCalendar;
 import org.junit.Test;
-
 import com.qa.cinema.persistence.Film;
-import com.qa.cinema.persistence.Showing;
 
 public class FilmTest {
 
 	@Test
 	public void testSetGetFilmID() {
-		Calendar c = Calendar.getInstance();
+		Calendar c = new GregorianCalendar();	
 		c.set(2012,7,21);
 		Film film = new Film("12A","Wizards",c,"Harry Potter");
 		film.setFilmID(new Long(0));
@@ -42,7 +38,7 @@ public class FilmTest {
 	@Test
 	public void testSetGetReleaseDate() {
 		Film film = new Film();
-		Calendar newReleaseDate = Calendar.getInstance();
+		Calendar newReleaseDate = new GregorianCalendar();
 		newReleaseDate.set(2012,7,21);
 		film.setReleaseDate(newReleaseDate);
 		Calendar releaseDate = film.getReleaseDate();

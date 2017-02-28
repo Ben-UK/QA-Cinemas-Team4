@@ -1,5 +1,7 @@
 package com.qa.cinema.util;
 
+import java.sql.Wrapper;
+
 import com.google.gson.Gson;
 
 public class JSONUtil {

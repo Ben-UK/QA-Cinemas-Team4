@@ -17,7 +17,7 @@ public class ActivityEndpointTest {
 	@InjectMocks
 	private ActivityEndpoint subject;
 	
-	private static final String MOCKSTRING = "[{\"activityID\": 1,\"title\": \"testTitle\",\"description\": \"testDescription\",\"releaseDate\": \"{\"year\":2017,\"month\":1,\"dayOfMonth\":24\",\"certification\": \"18\"}]";
+	private static final String MOCKSTRING = "[{\"activityID\": 1,\"title\": \"testTitle\",\"description\": \"testDescription\",\"releaseDate\": \"{\"year\":2017,\"month\":1,\"dayOfMonth\":24}\",\"certification\": \"18\"}]";
 	private static final String MOCK_DELETE_MESSAGE = "{\"message\": \"Activity sucessfully removed\"}";
 	
 	@Mock

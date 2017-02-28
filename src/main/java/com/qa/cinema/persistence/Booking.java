@@ -3,6 +3,8 @@ package com.qa.cinema.persistence;
 import java.io.Serializable;
 import javax.persistence.*;
 
+import org.hibernate.annotations.Cascade;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -21,20 +23,21 @@ public class Booking implements Serializable {
 	private Long bookingID;
 
 	//bi-directional many-to-one association to Showing
-	@ManyToOne
-	private Showing showing;
+//	@ManyToOne
+//	private Showing showing;
 
 	//bi-directional many-to-one association to Ticket
-	@OneToMany(mappedBy="booking")
-	private Set<Ticket> tickets;
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name="ticketID")
+	private Set<Ticket> tickets = new HashSet<Ticket>();
 
 	public Booking() {
-		this.tickets = new HashSet<Ticket>();
+		
 	}
 	
 	public Booking(Showing showing) {
-		this.showing = showing;
-		this.tickets = new HashSet<Ticket>();
+//		this.showing = showing;
+		
 	}
 
 	public Long getBookingID() {
@@ -45,34 +48,42 @@ public class Booking implements Serializable {
 		this.bookingID = bookingID;
 	}
 
-	public Showing getShowing() {
-		return this.showing;
-	}
+//	public Showing getShowing() {
+//		return this.showing;
+//	}
+//
+//	public void setShowing(Showing showing) {
+//		this.showing = showing;
+//	}
 
-	public void setShowing(Showing showing) {
-		this.showing = showing;
-	}
-
-	public Set<Ticket> getTickets() {
-		return this.tickets;
-	}
-
-	public void setTickets(Set<Ticket> tickets) {
-		this.tickets = tickets;
-	}
-
-	public Ticket addTicket(Ticket ticket) {
-		getTickets().add(ticket);
-		ticket.setBooking(this);
-
-		return ticket;
-	}
-
-	public Ticket removeTicket(Ticket ticket) {
-		getTickets().remove(ticket);
-		ticket.setBooking(null);
-
-		return ticket;
-	}
+//	public Set<Ticket> getTickets() {
+//		return this.tickets;
+//	}
+//
+//	public void setTickets(Set<Ticket> tickets) {
+//		this.tickets = tickets;
+//	}
+//
+//	public void addTicket(Set<Ticket> ticket){
+//		for(Ticket t : ticket){
+//			if(t != null){
+//				this.tickets.add(t);	
+//			}
+//		}
+//	}
+	
+//	public Ticket addTicket(Ticket ticket) {
+//		getTickets().add(ticket);
+//		ticket.setBooking(this);
+//
+//		return ticket;
+//	}
+//
+//	public Ticket removeTicket(Ticket ticket) {
+//		getTickets().remove(ticket);
+//		ticket.setBooking(null);
+//
+//		return ticket;
+//	}
 
 }

@@ -21,6 +21,7 @@ public class DBShowingService implements ShowingService {
 	@Inject
 	private JSONUtil util;
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public String listAllShowings() {
 		Query query = em.createQuery("SELECT e FROM Showing e");
