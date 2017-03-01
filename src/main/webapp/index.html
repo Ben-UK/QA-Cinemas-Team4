@@ -3,15 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <title>Movie application</title>
+
     <script src="app/feature/dashboard/dashboard-controller.js"></script>
+    <script type="text/javascript" src="app/namecheck.js"></script>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<ul>
-    <li ><a ui-sref="dashboard">Dashboard</a></li>
-    <li><a ui-sref="addmovie">Add movie</a></li>
-    <li><a ui-sref="getmovie">Get movies</a></li>
-</ul>
 
+<!--<div>
+    <ul>
+        <li><a ui-sref="dashboard">Dashboard</a></li>
+        <li><a ui-sref="addmovie">Add movie</a></li>
+        <li><a ui-sref="getmovie">Get movies</a></li>
+    </ul>
+</div>-->
+<div class="header-container">
+<div class="header">
+    <div class="testlogo"><img src="images/qa-logo.png" width=100%></div>
+    <div class="testname">QA Cinemas</div>
+    <div class="testnav">
+        <button class="button">What's On?</button>
+        <button class="button">Contact Us</button>
+        <form>
+            <input type="text" name="search" placeholder="Search..">
+        </form>
+    </div>
+
+    <!--<div class="logo"><img src="images/qa-logo.png" width=auto height=auto alt="QA"></div> &lt;!&ndash;width="180" height="127"&ndash;&gt;
+    <div class="company-name">
+        <p>QA Cinemas</p>
+    </div>
+    <div class="nav bar">
+        <button>What's on</button>
+        <button>Contact us</button>
+    </div>-->
+</div>
+</div>
+
+<br>
+
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 5</div>
+        <img src="images/batman.jpg" style="width:100%">
+        <div class="text">The LEGO Batman Movie</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 5</div>
+        <img src="images/beast.jpg" style="width:100%">
+        <div class="text">Beauty and the Beast</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 5</div>
+        <img src="images/logan.jpg" style="width:100%">
+        <div class="text">Logan</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">4 / 5</div>
+        <img src="images/moonlight.jpg" style="width:100%">
+        <div class="text">Moonlight</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">5 / 5</div>
+        <img src="images/sing.jpg" style="width:100%">
+        <div class="text">Sing</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<!--<br>
+<br>-->
+
+<div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+</div>
+
+<script>
+    var slideIndex = 0;
+    showSlides();
+
+    function plusSlides(n) {
+        moveSlides(slideIndex += n);
+    }
+
+    function moveSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+    }
+
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex> slides.length) {slideIndex = 1}
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 5000); // Change image every 2 seconds
+    }
+</script>
+
+<br>
+
+<div class="whats on">
+<!--<div class="fill"></div>-->
+<div class="posters">
+<div class="responsive">
+    <div class="img">
+        <a target="_blank" href="images/wellness_small.jpg">
+            <img src="images/wellness_small.jpg" alt="A Cure For Wellness" width="220" height="320">
+        </a>
+        <div class="desc">A Cure For Wellness</div>
+    </div>
+</div>
+
+<div class="responsive">
+    <div class="img">
+        <a target="_blank" href="images/batman_small.jpg">
+            <img src="images/batman_small.jpg" alt="The LEGO Batman Movie" width="220" height="320">
+        </a>
+        <div class="desc">The LEGO Batman Movie</div>
+    </div>
+</div>
+
+
+<div class="responsive">
+    <div class="img">
+        <a target="_blank" href="images/beast_small.jpg">
+            <img src="images/beast_small.jpg" alt="Beauty and the Beast" width="220" height="320">
+        </a>
+        <div class="desc">Beauty and the Beast</div>
+    </div>
+</div>
+
+<div class="responsive">
+    <div class="img">
+        <a target="_blank" href="images/fences_small.jpg">
+            <img src="images/fences_small.jpg" alt="Fences" width="220" height="320">
+        </a>
+        <div class="desc">Fences</div>
+    </div>
+</div>
+
+<div class="responsive">
+    <div class="img">
+        <a target="_blank" href="images/figures_small.jpg">
+            <img src="images/figures_small.jpg" alt="Hidden Figures" width="220" height="320">
+        </a>
+        <div class="desc">Hidden Figures</div>
+    </div>
+</div>
+
+<div class="responsive">
+    <div class="img">
+        <a target="_blank" href="images/logan_small.jpg">
+            <img src="images/logan_small.jpg" alt="Logan" width="220" height="320">
+        </a>
+        <div class="desc">Logan</div>
+    </div>
+</div>
+
+<div class="responsive">
+    <div class="img">
+        <a target="_blank" href="images/moonlight_small.jpg">
+            <img src="images/moonlight_small.jpg" alt="Moonlight" width="220" height="320">
+        </a>
+        <div class="desc">Moonlight</div>
+    </div>
+</div>
+
+<div class="responsive">
+    <div class="img">
+        <a target="_blank" href="images/sing_small.jpg">
+            <img src="images/sing_small.jpg" alt="Sing" width="220" height="320">
+        </a>
+        <div class="desc">Sing</div>
+    </div>
+</div>
+
+<div class="responsive">
+     <div class="img">
+         <a target="_blank" href="images/split_small.jpg">
+            <img src="images/split_small.jpg" alt="Split" width="220" height="320">
+         </a>
+         <div class="desc">Split</div>
+     </div>
+</div>
+
+<div class="responsive">
+    <div class="img">
+        <a target="_blank" href="images/t2_small.jpg">
+            <img src="images/t2_small.jpg" alt="T2: Trainspotting" width="220" height="320">
+        </a>
+        <div class="desc">T2: Trainspotting</div>
+    </div>
+</div>
+<!--<div class="fill"></div>-->
+</div>
+
+</div>
+
+<br>
+
+<div class="footer">
+    <div class="footer-cols">
+        <div class="footer-column">
+            <h3>Explore the site</h3>
+            <p>Find a cinema</p>
+            <p><a href="/whatson.html">What's on</a></p>
+            <p>Book tickets</p>
+        </div>
+        <div class="footer-column">
+            <h3>Help and support</h3>
+            <p>FAQs</p>
+            <p>Accessibility</p>
+            <p><a href="/contact.html">Contact us</a></p>
+        </div>
+        <div class="footer-column">
+            <h3>About QA Cinemas</h3>
+            <p>About us</p>
+            <p>Careers</p>
+            <p>Corporate events</p>
+        </div>
+    </div>
+    <div class="footer-cols">
+        <ll class="social">
+            <li><a href="https://www.facebook.com/QACinemas" class="fa fa-facebook"></a></li>
+            <li><a href="https://www.twitter.com/QACinemas" class="fa fa-twitter"></a></li>
+            <li><a href="https://plus.google.com/QACinemas" class="fa fa-google"></a></li>
+            <li><a href="https://www.youtube.com/QACinemas" class="fa fa-youtube"></a></li>
+            <li><a href="https://www.instagram.com/QACinemas" class="fa fa-instagram"></a></li>
+            <!--<li><a href="adminlogin.html">Admin login</a></li>-->
+        </ll>
+        <div class="login">
+            <!--<a href="adminlogin.html">Admin login</a>-->
+        </div>
+    </div>
+</div>
     <div ui-view></div>
     <!-- Angular modules-->
     <script src="scripts/angular.min.js"></script>
