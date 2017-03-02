@@ -23,11 +23,13 @@
 </div>-->
 <div class="header-container">
 <div class="header">
-    <div class="testlogo"><img src="images/qa-logo.png" width=100%></div>
+    <div class="testlogo"><img class="logo" src="images/qa-logo.png" width=100%></div>
     <div class="testname">QA Cinemas</div>
     <div class="testnav">
-        <button class="button">What's On?</button>
-        <button class="button">Contact Us</button>
+        <!--<button class="button"><a href="adminlogin.html">What's On?</a></button>
+        <button class="button"><a href="adminlogin.html">Contact Us</a></button>-->
+        <a href="whatson.html" class="button">Whats's On?</a>
+        <a href="contact.html" class="button">Contact Us</a>
         <br>
         <form>
             <input type="search" placeholder="Search">
@@ -57,37 +59,37 @@
 </div>
 </div>
 
-<br>
+<!--<br>-->
 
 <div class="slideshow-container">
 
     <div class="mySlides fade">
         <div class="numbertext">1 / 5</div>
-        <img src="images/batman.jpg" style="width:100%">
+        <img src="images/batman%20-%20Copy.jpg" style="width:100%">
         <div class="text">The LEGO Batman Movie</div>
     </div>
 
     <div class="mySlides fade">
         <div class="numbertext">2 / 5</div>
-        <img src="images/beast.jpg" style="width:100%">
+        <img src="images/beast%20-%20Copy.jpg" style="width:100%">
         <div class="text">Beauty and the Beast</div>
     </div>
 
     <div class="mySlides fade">
         <div class="numbertext">3 / 5</div>
-        <img src="images/logan.jpg" style="width:100%">
+        <img src="images/logan%20-%20Copy.jpg" style="width:100%">
         <div class="text">Logan</div>
     </div>
 
     <div class="mySlides fade">
         <div class="numbertext">4 / 5</div>
-        <img src="images/moonlight.jpg" style="width:100%">
+        <img src="images/moonlight%20-%20Copy.jpg" style="width:100%">
         <div class="text">Moonlight</div>
     </div>
 
     <div class="mySlides fade">
         <div class="numbertext">5 / 5</div>
-        <img src="images/sing.jpg" style="width:100%">
+        <img src="images/sing%20-%20Copy.jpg" style="width:100%">
         <div class="text">Sing</div>
     </div>
 
@@ -294,7 +296,8 @@
     </div>
 
 </div>
-
+</div>
+</div>
 <br>
 
 <!--Get times and days from the -->
@@ -372,22 +375,22 @@
 <div class="footer">
     <div class="footer-cols">
         <div class="footer-column">
-            <h3>Explore the site</h3>
-            <p>Find a cinema</p>
-            <p><a href="/whatson.html">What's on</a></p>
-            <p>Book tickets</p>
+            <col-head>Explore the site</col-head>
+            <p class="col-link">Find a cinema</p>
+            <p class="col-link"><a href="whatson.html">What's on</a></p>
+            <p class="col-link">Book tickets</p>
         </div>
         <div class="footer-column">
-            <h3>Help and support</h3>
-            <p>FAQs</p>
-            <p>Accessibility</p>
-            <p><a href="/contact.html">Contact us</a></p>
+            <col-head>Help and support</col-head>
+            <p class="col-link">FAQs</p>
+            <p class="col-link">Accessibility</p>
+            <p class="col-link"><a href="contact.html">Contact us</a></p>
         </div>
         <div class="footer-column">
-            <h3>About QA Cinemas</h3>
-            <p>About us</p>
-            <p>Careers</p>
-            <p>Corporate events</p>
+            <col-head>About QA Cinemas</col-head>
+            <p class="col-link"><a href="contact.html#about">About us</a></p>
+            <p class="col-link">Careers</p>
+            <p class="col-link">Corporate events</p>
         </div>
     </div>
     <div class="footer-cols">
@@ -404,9 +407,11 @@
         </div>
     </div>
     <div class="bottom-footer">
-        <p>© QA Cinemas 2017</p>
+        <p class="copyright">© QA Cinemas 2017</p>
     </div>
 </div>
+
+
     <div ui-view></div>
     <!-- Angular modules-->
     <script src="scripts/angular.min.js"></script>

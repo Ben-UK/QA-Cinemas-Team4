@@ -1,3 +1,7 @@
+body {
+    font-size: 100%;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -52,26 +56,6 @@ li a:hover {
     overflow: hidden;
 }
 
-/*
-.header-container {
-
-padding: 1%;
-margin: 10px auto;
-overflow: hidden;
-
-}
-
-.header {
-    width: 75%;
-    padding: 1%;
-    margin: 10px auto;
-    overflow: hidden;
-    !*border: solid;*!
-}*/
-
-
-
-
 .fill {
     width: 13%;
     float: left;
@@ -97,6 +81,7 @@ div.title {
     text-align: center;
     margin: 1%;
     height: 2%;
+    font-size: 1vw;
 }
 
 div.desc {
@@ -105,6 +90,7 @@ div.desc {
     text-align: center;
     margin: 1%;
     height: 5%;
+    font-size: 0.8vw;
 }
 
 * {
@@ -162,7 +148,7 @@ div.desc {
 
 /* Slideshow container */
 .slideshow-container {
-    max-width: 40%;
+    max-width: 100%;
     position: relative;
     margin: auto;
 }
@@ -253,7 +239,7 @@ div.desc {
     background-color: royalblue;
     /*width: 100%;*/
     padding:2%;
-    /*bottom:0;*/
+    bottom:0;
     overflow: hidden;
     color: white;
 }
@@ -289,14 +275,32 @@ div.desc {
     margin:auto;
 }
 
+.copyright {
+    font-size: 0.8vw;
+}
+
 .login {
     float: right;
 }
 
+col-head {
+    font-size: 1.5vw;
+}
+
+.col-link {
+    font-size: 1vw;
+}
+
+/*p {
+    font-size: 0.75vw;
+}*/
+
+
 .header-container {
     /*width: 100%;*/
     padding: 1%;
-    margin: 10px auto;
+    /*margin: 10px auto;*/
+    margin: auto;
     overflow: hidden;
     /*border: solid;*/
 }
@@ -304,14 +308,15 @@ div.desc {
 .header {
     width: 75%;
     padding: 1%;
-    margin: 10px auto;
+    /*margin: 10px auto;*/
+    margin: auto;
     overflow: hidden;
     /*border: solid;*/
 }
 
 .logo {
     /*border: solid;*/
-    width: 15%;
+    width: 80%;
     float: left;
     /*width: auto;
     height: auto;*/
@@ -350,18 +355,18 @@ div.desc {
     background-color: navy;
     color: white;
     text-align: center;
-    font-size: 100%;
+    font-size: 1vw;
     float: left;
     overflow: hidden;
     width: 48%;
-    height: 50px;
+   /* height: 80%;*/
     cursor: pointer;
     border-radius: 15px;
     margin: 1%;
 }
 
 .input[type=text] {
-    width: 130px;
+    width: 30px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -402,17 +407,19 @@ input[type=text]:focus {
 }
 
 .qb {
-    font-size: large;
+    font-size: 1vw;
 }
 
 .go {
     width:100px;
+    font-size: 0.75vw;
 }
 
 .fancy {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
+    font-size: 0.75vw;
 }
 
 
@@ -431,7 +438,7 @@ input[type=text]:focus {
     overflow: hidden;
     text-align: center;
     font-family: sans-serif;
-    font-size: 50px;
+    font-size: 4vw;
 }
 
 .testnav {
@@ -542,6 +549,7 @@ input[type=search] {
     -moz-transition: all .5s;
     transition: all .5s;
 }
+
 input[type=search]:focus {
     width: 85%; /*130px;*/
     background-color: #fff;
@@ -551,7 +559,6 @@ input[type=search]:focus {
     -moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
     box-shadow: 0 0 5px rgba(109,207,246,.5);
 }
-
 
 input:-moz-placeholder {
     color: #999;
