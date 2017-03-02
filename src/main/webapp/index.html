@@ -5,11 +5,12 @@
     <title>Movie application</title>
 
     <script src="app/feature/dashboard/dashboard-controller.js"></script>
-    <script type="text/javascript" src="app/namecheck.js"></script>
+
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -27,9 +28,22 @@
     <div class="testnav">
         <button class="button">What's On?</button>
         <button class="button">Contact Us</button>
+        <br>
         <form>
-            <input type="text" name="search" placeholder="Search..">
+            <input type="search" placeholder="Search">
         </form>
+
+        <!--Search bar 2-->
+        <!--<div class="box">
+            <div class="container-4">
+                <input type="search" id="search" placeholder="Search..." />
+                <button class="icon"><i class="fa fa-search"></i></button>
+            </div>
+        </div>-->
+        <!--<div class="container-1">
+            <span class="icon"><i class="fa fa-search"></i></span>
+            <input type="text" name="search" placeholder="Search..">
+        </div>-->
     </div>
 
     <!--<div class="logo"><img src="images/qa-logo.png" width=auto height=auto alt="QA"></div> &lt;!&ndash;width="180" height="127"&ndash;&gt;
@@ -137,34 +151,34 @@
 
 <br>
 
-<div class="whats on">
-<!--<div class="fill"></div>-->
+<!--ng-repeat for displaying each option fron the film table?-->
+<div class="whats-on">
 <div class="posters">
 <div class="responsive">
     <div class="img">
         <a target="_blank" href="images/wellness_small.jpg">
             <img src="images/wellness_small.jpg" alt="A Cure For Wellness" width="220" height="320">
         </a>
-        <div class="desc">A Cure For Wellness</div>
+        <div class="title">A Cure For Wellness</div>
+        <!--<div class="desc">A Cure For Wellness description</div>-->
+        <div class="desc">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
+        </div>
     </div>
 </div>
-
-<div class="responsive">
-    <div class="img">
-        <a target="_blank" href="images/batman_small.jpg">
-            <img src="images/batman_small.jpg" alt="The LEGO Batman Movie" width="220" height="320">
-        </a>
-        <div class="desc">The LEGO Batman Movie</div>
-    </div>
-</div>
-
 
 <div class="responsive">
     <div class="img">
         <a target="_blank" href="images/beast_small.jpg">
             <img src="images/beast_small.jpg" alt="Beauty and the Beast" width="220" height="320">
         </a>
-        <div class="desc">Beauty and the Beast</div>
+        <div class="title">Beauty and the Beast</div>
+        <!--<div class="desc">Beauty and the Beast description</div>-->
+        <div class="desc">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
+        </div>
     </div>
 </div>
 
@@ -173,7 +187,12 @@
         <a target="_blank" href="images/fences_small.jpg">
             <img src="images/fences_small.jpg" alt="Fences" width="220" height="320">
         </a>
-        <div class="desc">Fences</div>
+        <div class="title">Fences</div>
+        <!--<div class="desc">Fences description</div>-->
+        <div class="desc">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
+        </div>
     </div>
 </div>
 
@@ -182,7 +201,12 @@
         <a target="_blank" href="images/figures_small.jpg">
             <img src="images/figures_small.jpg" alt="Hidden Figures" width="220" height="320">
         </a>
-        <div class="desc">Hidden Figures</div>
+        <div class="title">Hidden Figures</div>
+        <!--<div class="desc">Hidden Figures description</div>-->
+        <div class="desc">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
+        </div>
     </div>
 </div>
 
@@ -191,7 +215,12 @@
         <a target="_blank" href="images/logan_small.jpg">
             <img src="images/logan_small.jpg" alt="Logan" width="220" height="320">
         </a>
-        <div class="desc">Logan</div>
+        <div class="title">Logan</div>
+        <!--<div class="desc">Logan description</div>-->
+        <div class="desc">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
+        </div>
     </div>
 </div>
 
@@ -200,7 +229,12 @@
         <a target="_blank" href="images/moonlight_small.jpg">
             <img src="images/moonlight_small.jpg" alt="Moonlight" width="220" height="320">
         </a>
-        <div class="desc">Moonlight</div>
+        <div class="title">Moonlight</div>
+        <!--<div class="desc">Moonlight description</div>-->
+        <div class="desc">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
+        </div>
     </div>
 </div>
 
@@ -209,7 +243,12 @@
         <a target="_blank" href="images/sing_small.jpg">
             <img src="images/sing_small.jpg" alt="Sing" width="220" height="320">
         </a>
-        <div class="desc">Sing</div>
+        <div class="title">Sing</div>
+        <!--<div class="desc">Sing description</div>-->
+        <div class="desc">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
+        </div>
     </div>
 </div>
 
@@ -218,7 +257,12 @@
          <a target="_blank" href="images/split_small.jpg">
             <img src="images/split_small.jpg" alt="Split" width="220" height="320">
          </a>
-         <div class="desc">Split</div>
+         <div class="title">Split</div>
+         <!--<div class="desc">Split description</div>-->
+         <div class="desc">
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+             Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
+         </div>
      </div>
 </div>
 
@@ -227,15 +271,103 @@
         <a target="_blank" href="images/t2_small.jpg">
             <img src="images/t2_small.jpg" alt="T2: Trainspotting" width="220" height="320">
         </a>
-        <div class="desc">T2: Trainspotting</div>
+        <div class="title">T2: Trainspotting</div>
+        <!--<div class="desc">T2: Trainspotting description</div>-->
+        <div class="desc">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
+        </div>
     </div>
 </div>
-<!--<div class="fill"></div>-->
-</div>
+
+<div class="responsive">
+    <div class="img">
+        <a target="_blank" href="images/batman_small.jpg">
+            <img src="images/batman_small.jpg" alt="The LEGO Batman Movie" width="220" height="320">
+        </a>
+        <div class="title">The LEGO Batman Movie</div>
+        <!--<div class="desc">The LEGO Batman Movie description</div>-->
+        <div class="desc">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
+        </div>
+    </div>
 
 </div>
 
 <br>
+
+<!--Get times and days from the -->
+<div class="quick-book">
+    <div>
+        Quick book:
+        Pick a cinema:
+        <select class="form-control fancy" name="cinema" id="main">
+            <option selected value="select">-----Select-----</option>
+            <option value="main">Test location 1</option>
+            <option value="main">Test location 2</option>
+            <option value="main">Test location 3</option>
+        </select>
+        Pick a film:
+        <select class="form-control fancy" name="film" id="film" disabled>
+            <option selected value="select">-----Select-----</option>
+            <option>Test film 1</option>
+            <option>Test film 2</option>
+        </select>
+        Pick a day:
+        <select class="form-controll fancy" name="day" id="day" disabled>
+            <option selected value="select">-----Select-----</option>
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thursday</option>
+            <option>Friday</option>
+            <option>Saturday</option>
+            <option>Sunday</option>
+        </select>
+        Pick a time:
+        <select class="form-controll fancy" name="time" id="time" disabled>
+            <option selected value="select">-----Select-----</option>
+            <option>Test time 1</option>
+            <option>Test time 2</option>
+            <option>Test time 3</option>
+            <option>Test time 4</option>
+            <option>Test time 5</option>
+        </select>
+        <input class="go" type="submit" value="Go"/>
+    </div>
+</div>
+
+<!--put in new file-->
+<script>
+    function validate_main() {
+        var i,
+            bad = this.value === "select",
+            selects = document.getElementsByClassName("form-control");
+        for (i = 0; i < selects.length; ++i) {
+            if (selects[i].id !== 'main')
+                selects[i].disabled = bad;
+        }
+
+    }
+    var sel = document.getElementById("main");
+    sel.addEventListener("change", validate_main);
+
+    function validate_film() {
+        var i,
+            bad = document.getElementsByClassName("main").value === "select",
+            selects = document.getElementsByClassName("form-controll");
+        for (i = 0; i < selects.length; ++i) {
+            if (selects[i].id !== 'main')
+                selects[i].disabled = bad;
+        }
+
+    }
+    var del = document.getElementById("film");
+    del.addEventListener("change", validate_film);
+
+</script>
+<!--new file-->
 
 <div class="footer">
     <div class="footer-cols">
@@ -270,6 +402,9 @@
         <div class="login">
             <!--<a href="adminlogin.html">Admin login</a>-->
         </div>
+    </div>
+    <div class="bottom-footer">
+        <p>© QA Cinemas 2017</p>
     </div>
 </div>
     <div ui-view></div>
