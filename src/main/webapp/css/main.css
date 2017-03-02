@@ -35,6 +35,24 @@ li a:hover {
     background-color: royalblue;
 }
 
+/*link underline*/
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+/**/
+
 .carousel {
     width: 100%;
     float:left;
@@ -203,9 +221,11 @@ div.desc {
 
 /* The dots/bullets/indicators */
 .dot {
-    height: 13px;
-    width: 13px;
-    margin: 0 2px;
+    /*height: 13px;
+    width: 13px;*/
+    height: 0.8vw;
+    width: 0.8vw;
+    margin: 0.2vw;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
@@ -363,9 +383,11 @@ col-head {
     cursor: pointer;
     border-radius: 15px;
     margin: 1%;
+    height:2vw;
 }
 
-.input[type=text] {
+/*old search*/
+/*.input[type=text] {
     width: 30px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -391,7 +413,7 @@ input[type=text]:focus {
     margin-top: 17px;
     z-index: 1;
     color: #4f5b66;
-}
+}*/
 
 .quick-book {
     position: fixed;
@@ -407,12 +429,13 @@ input[type=text]:focus {
 }
 
 .qb {
-    font-size: 1vw;
+    font-size: 0.8vw;
 }
 
 .go {
-    width:100px;
+    width:7vw;
     font-size: 0.75vw;
+    height: 1.5vw;
 }
 
 .fancy {
@@ -449,7 +472,7 @@ input[type=text]:focus {
 }
 
 /*search bar 2*/
-.container-4{
+/*.container-4{
     overflow: hidden;
     width: 300px;
     vertical-align: middle;
@@ -474,11 +497,11 @@ input[type=text]:focus {
     color: #65737e;
 }
 
-.container-4 input#search:-moz-placeholder { /* Firefox 18- */
+.container-4 input#search:-moz-placeholder { !* Firefox 18- *!
     color: #65737e;
 }
 
-.container-4 input#search::-moz-placeholder {  /* Firefox 19+ */
+.container-4 input#search::-moz-placeholder {  !* Firefox 19+ *!
     color: #65737e;
 }
 
@@ -517,11 +540,15 @@ input[type=text]:focus {
 
 .container-4:hover button.icon:hover{
     background: white;
-}
+}*/
 
 /*search 3 - current*/
 input {
     outline: none;
+    /*max-height: inherit;*/
+    /*height: 5%;*/
+    height:1vw;
+
 }
 input[type=search] {
     -webkit-appearance: textfield;
@@ -534,12 +561,13 @@ input::-webkit-search-cancel-button {
     display: none;
 }
 
-
+/*implement dynamic resizing*/
 input[type=search] {
     background: #ededed url(http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
     border: solid 1px #ccc;
     padding: 9px 10px 9px 32px;
-    width: 50%; /*55px;*/
+    width: 35%; /*55px;*/
+    height: 1vw;
 
     -webkit-border-radius: 10em;
     -moz-border-radius: 10em;
