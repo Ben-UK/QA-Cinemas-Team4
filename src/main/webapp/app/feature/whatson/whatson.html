@@ -1,0 +1,105 @@
+<link rel="stylesheet" href="../../../main.css">
+<link href="../../../bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+<div class="container-fluid bg-4" align="center">
+  <form text-center>
+    <input type="text" name="search" placeholder="Search..">
+
+    <select name="Cinema" >
+      <option selected>Cinema...</option>
+      <option >Cinema 1</option>
+      <option >Cinema 2</option>
+      <option >Cinema 3</option>
+    </select>
+
+    <select name="Event">
+      <option selected>Event...</option>
+      <option >Event 1</option>
+      <option >Event 2</option>
+      <option >Event 3</option>
+    </select>
+
+    <input type="checkbox" id="upcoming"/>
+    <label for="upcoming" align="right"><span></span>Show Upcoming</label>
+  </form>
+
+
+</div>
+
+  <div class="container">
+    <div class="panel-group">
+
+      <div class="panel panel-default col-md-10 col-md-offset-1">
+        <div class="panel-heading">Film Title <img id="imageid"  ></div>
+        <div class="panel-body">
+          <div class="row">
+
+            <div class="col-md-6">
+              <div class="container">
+                <img class="image" src="../../../images/U.png" />
+                <div class="middle">
+                  <a><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; View Trailer</span></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6" align="left">
+              <h1 class="text-primary bg-4" ></h1>
+              <p class="text-primary text-left"> <strong> Description </strong> </p>
+              <p class="text-primary text-left" style="color:black">A description about the film taken from DB..</p>
+              <p class="text-primary text-left"> <strong> Release Date </strong> </p>
+              <p class="text-primary text-left" style="color:black"> --/--/-- </p>
+              <p class="text-primary text-left"> <strong> Certification </strong> </p>
+              <p class="text-primary text-left" style="color:black"> Extracted from DB </p>
+
+              <p class="text-primary text-left"> <strong> TODAY </strong> </p>
+              <div class="container-fluid bg-4">
+                <button >Showing 1</button>
+                <button >Showing 2</button>
+              </div>
+
+
+<!--                <button class="btn btn-info btn-sm" type="button" onclick="viewTrailer()">
+                  <span class="glyphicon glyphicon-play"></span>Play Trailer</button>
+                <div id="trailer" style="display: none">
+                  <iframe class="trailer" src="http://www.youtube.com/embed/z4UDNzXD3qA?feature=player_detailpage" frameborder="2" allowfullscreen=""></iframe>
+                </div>-->
+
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<!--
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; View Trailer</span>-->
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <iframe class="trailer" src="http://www.youtube.com/embed/z4UDNzXD3qA?feature=player_detailpage" frameborder="2" allowfullscreen=""></iframe>
+
+</div>
+
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "100%";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
+<script src="whatson.js"></script>
+<script>
+    document.getElementById("imageid").src = getCertificationImage('18');
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
