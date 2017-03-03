@@ -3,35 +3,24 @@ package com.qa.cinema.persistence;
 import java.io.Serializable;
 import javax.persistence.*;
 
-
-/**
- * The persistent class for the ticket database table.
- * 
- */
 @Entity
-@NamedQuery(name="Ticket.findAll", query="SELECT t FROM Ticket t")
+@NamedQuery(name = "Ticket.findAll", query = "SELECT t FROM Ticket t")
 public class Ticket implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ticketID")
 	private Long ticketID;
 
+	@Column(name = "ticketType")
 	private String ticketType;
-	
 
-	//bi-directional many-to-one association to Booking
-	@ManyToOne
-	private Booking booking;
+	@Column(name = "tickets_bookingID")
+	private Long bookingID;
 
 	public Ticket() {
 	}
-	
-	public Ticket(String ticketType) {
-		this.ticketType = ticketType;
-	}
-
-
 
 	public Long getTicketID() {
 		return this.ticketID;
@@ -49,14 +38,12 @@ public class Ticket implements Serializable {
 		this.ticketType = ticketType;
 	}
 
-	public Booking getBooking() {
-		return this.booking;
+	public Long getBookingID() {
+		return bookingID;
 	}
 
-	public void setBooking(Booking booking) {
-		this.booking = booking;
+	public void setBookingID(Long bookingID) {
+		this.bookingID = bookingID;
 	}
-	
-	
 
 }
