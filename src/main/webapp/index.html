@@ -2,10 +2,10 @@
 <html lang="en" ng-app="movieApp">
 <head>
     <meta charset="UTF-8">
-    <title>Movie application</title>
+    <title>QA Cinemas</title>
 
     <script src="app/feature/dashboard/dashboard-controller.js"></script>
-
+    <script src="app/set-quick-book.js"></script>
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
@@ -31,9 +31,9 @@
         <a href="whatson.html" class="button">Whats's On?</a>
         <a href="contact.html" class="button">Contact Us</a>
         <br>
-        <form>
+        <!--<form>
             <input type="search" placeholder="Search">
-        </form>
+        </form>-->
     </div>
 </div>
 </div>
@@ -143,8 +143,8 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
         </div>
-        <button onclick="setElement(1,1,'m',12)">12:00</button>
-        <button onclick="setElement(2,2,'tu',14)">14:00</button>
+        <button class="time" onclick="setElement(1,1,'m',12)">12:00</button>
+        <button class="time" onclick="setElement(2,2,'tu',14)">14:00</button>
     </div>
 </div>
 
@@ -159,8 +159,8 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
         </div>
-        <button onclick="setElement(3,1,'w',16)">16:00</button>
-        <button onclick="setElement(1,2,'th',18)">18:00</button>
+        <button class="time" onclick="setElement(3,1,'w',16)">16:00</button>
+        <button class="time" onclick="setElement(1,2,'th',18)">18:00</button>
     </div>
 </div>
 
@@ -175,8 +175,8 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
         </div>
-        <button onclick="setElement(2,1,'f',20)">20:00</button>
-        <button onclick="setElement(3,2,'sa',12)">12:00</button>
+        <button class="time" onclick="setElement(2,1,'f',20)">20:00</button>
+        <button class="time" onclick="setElement(3,2,'sa',12)">12:00</button>
     </div>
 </div>
 
@@ -191,8 +191,8 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
         </div>
-        <button onclick="setElement(1,1,'su',14)">14:00</button>
-        <button onclick="setElement(2,2,'m',16)">16:00</button>
+        <button class="time" onclick="setElement(1,1,'su',14)">14:00</button>
+        <button class="time" onclick="setElement(2,2,'m',16)">16:00</button>
     </div>
 </div>
 
@@ -207,8 +207,8 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
         </div>
-        <button onclick="setElement(3,1,'tu',18)">18:00</button>
-        <button onclick="setElement(1,2,'w',20)">20:00</button>
+        <button class="time" onclick="setElement(3,1,'tu',18)">18:00</button>
+        <button class="time" onclick="setElement(1,2,'w',20)">20:00</button>
     </div>
 </div>
 
@@ -223,8 +223,8 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
         </div>
-        <button onclick="setElement(2,1,'th',12)">12:00</button>
-        <button onclick="setElement(3,2,'f',14)">14:00</button>
+        <button class="time" onclick="setElement(2,1,'th',12)">12:00</button>
+        <button class="time" onclick="setElement(3,2,'f',14)">14:00</button>
     </div>
 </div>
 
@@ -239,8 +239,8 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
         </div>
-        <button onclick="setElement(1,1,'sa',12)">12:00</button>
-        <button onclick="setElement(2,2,'su',14)">14:00</button>
+        <button class="time" onclick="setElement(1,1,'sa',16)">16:00</button>
+        <button class="time" onclick="setElement(2,2,'su',18)">18:00</button>
     </div>
 </div>
 
@@ -255,8 +255,8 @@
              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
              Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
          </div>
-         <button onclick="setElement(3,1,'m',12)">12:00</button>
-         <button onclick="setElement(1,2,'tu',14)">14:00</button>
+         <button class="time" onclick="setElement(3,1,'m',20)">20:00</button>
+         <button class="time" onclick="setElement(1,2,'tu',12)">12:00</button>
      </div>
 </div>
 
@@ -271,8 +271,8 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
         </div>
-        <button onclick="setElement(2,1,'w',12)">12:00</button>
-        <button onclick="setElement(3,2,'th',14)">14:00</button>
+        <button class="time" onclick="setElement(2,1,'w',14)">14:00</button>
+        <button class="time" onclick="setElement(3,2,'th',16)">16:00</button>
     </div>
 </div>
 
@@ -287,8 +287,8 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
         </div>        <div>
-        <button onclick="setElement(1,1,'f',12)">12:00</button>
-        <button onclick="setElement(2,2,'sa',14)">14:00</button>
+        <button class="time" onclick="setElement(1,1,'f',18)">18:00</button>
+        <button class="time" onclick="setElement(2,2,'sa',20)">20:00</button>
     </div>
 
     </div>
@@ -380,21 +380,6 @@
     }
     var kel = document.getElementById("day");
     kel.addEventListener("change", validate_date);
-
-    function setElement(cinemaToSet, filmToSet, dayToSet, timeToSet)
-    {
-        var element1 = document.getElementById('main');
-        element1.value = cinemaToSet;
-
-        var element2 = document.getElementById('film');
-        element2.value = filmToSet;
-
-        var element3 = document.getElementById('day');
-        element3.value = dayToSet;
-
-        var element4 = document.getElementById('time');
-        element4.value = timeToSet;
-    }
 
 </script>
 <!--new file-->

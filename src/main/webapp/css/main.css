@@ -111,6 +111,11 @@ div.desc {
     font-size: 0.8vw;
 }
 
+.time {
+    padding: 1%;
+    margin: 1%;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -378,7 +383,7 @@ col-head {
     font-size: 1vw;
     float: left;
     overflow: hidden;
-    width: 48%;
+    width: 100%; /*48*/
    /* height: 80%;*/
     cursor: pointer;
     border-radius: 15px;
