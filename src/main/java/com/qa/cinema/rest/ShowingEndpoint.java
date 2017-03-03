@@ -8,16 +8,11 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.Path;
-
 import com.qa.cinema.service.ShowingService;
 
 @Path("/showing")
 
 public class ShowingEndpoint {
-
-
-
 
 	@Inject
 	private ShowingService service;
@@ -50,5 +45,3 @@ public class ShowingEndpoint {
 		return service.deleteShowing(showingID);
 	}
 }
-
-

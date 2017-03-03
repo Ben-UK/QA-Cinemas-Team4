@@ -18,6 +18,9 @@
         }).state("home", {
             url: "/home",
             templateUrl: "app/feature/homepage/homepage-partial.html"
+        }).state("whatson", {
+            url: "/whatson",
+            templateUrl: "app/feature/whatson/whatson.html"
         })
     });
 }());
