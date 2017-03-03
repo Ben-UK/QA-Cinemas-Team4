@@ -6,35 +6,24 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-
-/**
- * The persistent class for the booking database table.
- * 
- */
 @Entity
-@NamedQuery(name="Booking.findAll", query="SELECT b FROM Booking b")
+@NamedQuery(name = "Booking.findAll", query = "SELECT b FROM Booking b")
 public class Booking implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long bookingID;
 
-	//bi-directional many-to-one association to Showing
-	@ManyToOne
-	private Showing showing;
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "tickets_bookingID")
+	private Set<Ticket> tickets = new HashSet<Ticket>();
 
-	//bi-directional many-to-one association to Ticket
-	@OneToMany(mappedBy="booking")
-	private Set<Ticket> tickets;
+	@Column(name = "bookings_showingID")
+	private Long showingID;
 
 	public Booking() {
-		this.tickets = new HashSet<Ticket>();
-	}
-	
-	public Booking(Showing showing) {
-		this.showing = showing;
-		this.tickets = new HashSet<Ticket>();
+
 	}
 
 	public Long getBookingID() {
@@ -45,34 +34,20 @@ public class Booking implements Serializable {
 		this.bookingID = bookingID;
 	}
 
-	public Showing getShowing() {
-		return this.showing;
+	public Long getShowingID() {
+		return showingID;
 	}
 
-	public void setShowing(Showing showing) {
-		this.showing = showing;
+	public void setShowingID(Long showingID) {
+		this.showingID = showingID;
 	}
 
-	public Set<Ticket> getTickets() {
-		return this.tickets;
+	public Set<Ticket> getTicketsSet() {
+		return tickets;
 	}
 
-	public void setTickets(Set<Ticket> tickets) {
+	public void setTicketsSet(Set<Ticket> tickets) {
 		this.tickets = tickets;
-	}
-
-	public Ticket addTicket(Ticket ticket) {
-		getTickets().add(ticket);
-		ticket.setBooking(this);
-
-		return ticket;
-	}
-
-	public Ticket removeTicket(Ticket ticket) {
-		getTickets().remove(ticket);
-		ticket.setBooking(null);
-
-		return ticket;
 	}
 
 }

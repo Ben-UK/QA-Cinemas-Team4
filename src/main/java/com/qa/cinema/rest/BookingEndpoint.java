@@ -14,37 +14,38 @@ import com.qa.cinema.service.BookingService;
 @Path("/booking")
 public class BookingEndpoint {
 
-		@Inject
-		private BookingService bookingService;
-		
-		@GET
-		@Path("/json")
-		@Produces({"application/json"})
-		public String listAllBookings(){
-			return bookingService.listAllBookings();
-			
-		}
-		
-		@POST
-		@Path("/json")
-		@Produces({"application/json"})
-		public String createBooking(String bookingJson){
-			return bookingService.createBooking(bookingJson);
-			
-		}
-		@PUT
-		@Path("/json/{id}")
-		@Produces({"application/json"})
-		public String updateBooking(@PathParam("id")Long bookingID, String booking){
-			return bookingService.updateBooking(bookingID, booking);
-			
-		}
-		
-		@DELETE
-		@Path("/json/{id}")
-		@Produces({"application/json"})
-		public String deleteBooking(@PathParam("id")Long bookingID){
-			return bookingService.deleteBooking(bookingID);
-		}
-		
+	@Inject
+	private BookingService bookingService;
+
+	@GET
+	@Path("/json")
+	@Produces({ "application/json" })
+	public String listAllBookings() {
+		return bookingService.listAllBookings();
+
+	}
+
+	@POST
+	@Path("/json")
+	@Produces({ "application/json" })
+	public String createBooking(String bookingJson) {
+		return bookingService.createBooking(bookingJson);
+
+	}
+
+	@PUT
+	@Path("/json/{id}")
+	@Produces({ "application/json" })
+	public String updateBooking(@PathParam("id") Long bookingID, String bookingJSON) {
+		return bookingService.updateBooking(bookingID, bookingJSON);
+
+	}
+
+	@DELETE
+	@Path("/json/{id}")
+	@Produces({ "application/json" })
+	public String deleteBooking(@PathParam("id") Long bookingID) {
+		return bookingService.deleteBooking(bookingID);
+	}
+
 }

@@ -10,7 +10,6 @@ import javax.persistence.Query;
 import com.qa.cinema.persistence.Showing;
 import com.qa.cinema.util.JSONUtil;
 
-
 @Stateless
 @Default
 public class DBShowingService implements ShowingService {
@@ -21,6 +20,7 @@ public class DBShowingService implements ShowingService {
 	@Inject
 	private JSONUtil util;
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public String listAllShowings() {
 		Query query = em.createQuery("SELECT e FROM Showing e");
@@ -60,4 +60,3 @@ public class DBShowingService implements ShowingService {
 	}
 
 }
-
