@@ -15,6 +15,9 @@
         }).state("getmovie", {
             url: "/getmovie",
             templateUrl: "app/feature/movie/get/get-movie-partial.html"
+        }).state("whatson", {
+            url: "/whatson",
+            templateUrl: "app/feature/whatson/whatson.html"
         })
     });
 }());
