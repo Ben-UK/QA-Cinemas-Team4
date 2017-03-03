@@ -16,56 +16,33 @@ public class CinemaEndPoint {
 
 	@Inject
 	private CinemaService cinemaService;
-	
+
 	@GET
 	@Path("/json")
-	@Produces({"application/json"})
-	public String getCinemaAsJson(){
+	@Produces({ "application/json" })
+	public String getCinemaAsJson() {
 		return cinemaService.listAllCinemas();
 	}
-//	
-//	@GET
-//	@Path("/json")
-//	@Produces({"application/json"})
-//	public String getAllCurrentlyShowingFilmsAsJson(){
-//		return cinemaService.getAllCurrentlyShowingFilms();
-//	}
-//	
-//	@GET
-//	@Path("/json")
-//	@Produces({"application/json"})
-//	public String getAllCurrentlyShowingActivitiesAsJson(){
-//		return cinemaService.getAllCurrentlyShowingActivities();
-//	}
-//	
-//	@GET
-//	@Path("/json")
-//	@Produces({"application/json"})
-//	public String getAllFutureReleasesAsJson(){
-//		return cinemaService.getAllFutureReleases();
-//	}
-	
+
 	@POST
 	@Path("/json")
-	@Produces({"application/json"})
-	public String addNewCinemaToFranchise(String cinemaLocation){
+	@Produces({ "application/json" })
+	public String addNewCinemaToFranchise(String cinemaLocation) {
 		return cinemaService.createCinema(cinemaLocation);
 	}
-	
+
 	@PUT
 	@Path("/json/{id}")
-	@Produces({"application/json"})
-	public String updateCinemaFromFranchise(@PathParam("id") Long cinemaID, String cinemaLocation){
+	@Produces({ "application/json" })
+	public String updateCinemaFromFranchise(@PathParam("id") Long cinemaID, String cinemaLocation) {
 		return cinemaService.updateCinema(cinemaID, cinemaLocation);
 	}
-	
+
 	@DELETE
 	@Path("/json/{id}")
-	@Produces({"application/json"})
-	public String deleteCinemaFromFranchise(@PathParam("id") Long showingID){
+	@Produces({ "application/json" })
+	public String deleteCinemaFromFranchise(@PathParam("id") Long showingID) {
 		return cinemaService.deleteCinema(showingID);
 	}
-	
-	
-	
+
 }

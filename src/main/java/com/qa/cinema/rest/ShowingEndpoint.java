@@ -45,5 +45,3 @@ public class ShowingEndpoint {
 		return service.deleteShowing(showingID);
 	}
 }
-
-

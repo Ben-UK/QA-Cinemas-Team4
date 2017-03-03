@@ -3,48 +3,39 @@ package com.qa.cinema.persistence;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Calendar;
-import java.util.Set;
 
-
-/**
- * The persistent class for the film database table.
- * 
- */
 @Entity
-@NamedQuery(name="Film.findAll", query="SELECT f FROM Film f")
-public class Film implements Serializable {
+@NamedQuery(name = "Event.findAll", query = "SELECT e FROM Event e")
+public class Event implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long filmID;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long eventID;
 
-	private String certification;
+	private String eventType;
 
+	private String title;
 	@Lob
 	private String description;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Calendar releaseDate;
 
-	private String title;
+	private String certification;
 
-	public Film() {
-	}
-	
-	public Film(String certification, String description, Calendar releaseDate, String title) {
-		this.certification = certification;
-		this.description = description;
-		this.releaseDate = releaseDate;
-		this.title = title;
+	@Column(name = "event_showingID")
+	private Long showingID;
+
+	public Event() {
 	}
 
-	public Long getFilmID() {
-		return this.filmID;
+	public Long getEventID() {
+		return this.eventID;
 	}
 
-	public void setFilmID(Long filmID) {
-		this.filmID = filmID;
+	public void setEventID(Long eventID) {
+		this.eventID = eventID;
 	}
 
 	public String getCertification() {
@@ -78,4 +69,21 @@ public class Film implements Serializable {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
+	public String getEventType() {
+		return eventType;
+	}
+
+	public void setEventType(String eventType) {
+		this.eventType = eventType;
+	}
+
+	public Long getShowingID() {
+		return showingID;
+	}
+
+	public void setShowingID(Long showingID) {
+		this.showingID = showingID;
+	}
+
 }

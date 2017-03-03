@@ -21,8 +21,6 @@ public class DBTicketService implements TicketService {
 
 	@Inject
 	private JSONUtil util;
-	
-	
 
 	@Override
 	public String createNewTicket(String ticketJson) {
@@ -58,7 +56,6 @@ public class DBTicketService implements TicketService {
 	@SuppressWarnings("unchecked")
 	@Override
 	public String showTicket() {
-		//Query query = em.createQuery("SELECT t FROM Ticket t WHERE TICKETID = " + ticketID);
 		Query query = em.createQuery("SELECT t FROM Ticket t");
 		Collection<Ticket> ticket = (Collection<Ticket>) query.getResultList();
 		return util.getJSONForObject(ticket);
