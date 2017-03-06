@@ -21,9 +21,12 @@
         }).state("whatson", {
             url: "/whatson",
             templateUrl: "app/feature/whatson/whatson.html"
-        })/*.state("contact", {
+        }).state("contact", {
             url: "/contact",
-            templateUrl: "app/feature/contactus/contactus.html"
-        })*/
+            templateUrl: "app/feature/contact/contactus.html"
+        }).state("payment", {
+            url: "/payment",
+            templateUrl: "app/feature/payment/payment.html"
+        })
     });
 }());
