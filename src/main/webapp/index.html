@@ -2,34 +2,217 @@
 <html lang="en" ng-app="movieApp">
 <head>
     <meta charset="UTF-8">
-    <title>Movie application</title>
+    <title>QA Cinemas</title>
+
     <script src="app/feature/dashboard/dashboard-controller.js"></script>
+    <script src="app/set-quick-book.js"></script>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
-<ul>
-    <li ><a ui-sref="dashboard">Dashboard</a></li>
-    <li><a ui-sref="addmovie">Add movie</a></li>
-    <li><a ui-sref="getmovie">Get movies</a></li>
-    <li><a ui-sref="ContactUs.html">Contact Us</a></li>
-</ul>
 
-    <div ui-view></div>
-    <!-- Angular modules-->
+<!--<div>
+    <ul>
+        <li><a ui-sref="dashboard">Dashboard</a></li>
+        <li><a ui-sref="addmovie">Add movie</a></li>
+        <li><a ui-sref="getmovie">Get movies</a></li>
+    </ul>
+</div>-->
+<div class="header-container">
+<div class="header">
+    <div class="testlogo"><a ui-sref="home"><img class="logo" src="images/qa-logo.png" width=100%></a></div>
+    <div class="testname">QA Cinemas</div>
+    <div class="testnav">
+        <!--<button class="button"><a href="adminlogin.html">What's On?</a></button>
+        <button class="button"><a href="adminlogin.html">Contact Us</a></button>-->
+        <a ui-sref="whatson" class="button">What's On?</a>
+        <a ui-sref="contact" class="button">Contact Us</a>
+        <!--<a href="whatson.html" class="button">Whats's On?</a>
+        <a href="contact.html" class="button">Contact Us</a>-->
+        <br>
+        <!--<form>
+            <input type="search" placeholder="Search">
+        </form>-->
+    </div>
+</div>
+</div>
+
+<!--<br>-->
+
+<!--Homepage stuff-->
+
+<br>
+
+<!--homepage test-->
+<div ui-view></div>
+<!-- Angular modules-->
+<script src="scripts/angular.min.js"></script>
+<script src="scripts/ui-router.min.js"></script>
+
+<!-- App and state manager-->
+<script src="app/app.js"></script>
+<script src="app/app-state-manager.js"></script>
+
+<!-- Services-->
+<script src="app/service/dal/dal.js"></script>
+<script src="app/service/dal/movie.js"></script>
+
+<!-- Features-->
+<!--<script src="app/feature/dashboard/dashboard-controller.js"></script>-->
+<script src="app/feature/movie/add/add-movie-controller.js"></script>
+<script src="app/feature/movie/get/get-movie-controller.js"></script>
+<!--Homepage test-->
+
+
+<!--Get times and days from the showing-->
+<div class="quick-book">
+    <div class="qb">
+        Quick book:
+        Pick a cinema:
+        <select class="form-control fancy" name="cinema" id="main">
+            <option selected value="select">-----Select-----</option>
+            <option value="1">Test location 1</option>
+            <option value="2">Test location 2</option>
+            <option value="3">Test location 3</option>
+        </select>
+        Pick a film:
+        <select class="form-control fancy" name="film" id="film" disabled>
+            <option selected value="select">-----Select-----</option>
+            <option value="1">Test film 1</option>
+            <option value="2">Test film 2</option>
+        </select>
+        Pick a day:
+        <select class="form-control2 fancy" name="day" id="day" disabled>
+            <option selected value="select">-----Select-----</option>
+            <option value="m">Monday</option>
+            <option value="tu">Tuesday</option>
+            <option value="w">Wednesday</option>
+            <option value="th">Thursday</option>
+            <option value="f">Friday</option>
+            <option value="sa">Saturday</option>
+            <option value="su">Sunday</option>
+        </select>
+        Pick a time:
+        <select class="form-control3 fancy" name="time" id="time" disabled>
+            <option selected value="select">-----Select-----</option>
+            <option value="12">12:00</option>
+            <option value="14">14:00</option>
+            <option value="16">16:00</option>
+            <option value="18">18:00</option>
+            <option value="20">20:00</option>
+        </select>
+        <input class="go" type="submit" value="Go" ui-sref="payment"/>
+    </div>
+</div>
+
+<!--put in new file-->
+<script>
+    function validate_main() {
+        var i,
+            bad = this.value === "select",
+            selects = document.getElementsByClassName("form-control");
+        for (i = 0; i < selects.length; ++i) {
+            if (selects[i].id !== 'main')
+                selects[i].disabled = bad;
+        }
+
+    }
+    var sel = document.getElementById("main");
+    sel.addEventListener("change", validate_main);
+
+    /*change to do one at a time*/
+    function validate_film() {
+        var i,
+            bad = document.getElementsByClassName("main").value === "select",
+            selects = document.getElementsByClassName("form-control2");
+        for (i = 0; i < selects.length; ++i) {
+            if (selects[i].id !== 'main')
+                selects[i].disabled = bad;
+        }
+
+    }
+    var del = document.getElementById("film");
+    del.addEventListener("change", validate_film);
+
+    function validate_date() {
+        var i,
+            bad = document.getElementsByClassName("main").value === "select",
+            selects = document.getElementsByClassName("form-control3");
+        for (i = 0; i < selects.length; ++i) {
+            if (selects[i].id !== 'main')
+                selects[i].disabled = bad;
+        }
+
+    }
+    var kel = document.getElementById("day");
+    kel.addEventListener("change", validate_date);
+
+</script>
+
+
+
+
+
+<div class="footer">
+    <div class="footer-cols">
+        <div class="footer-column">
+            <col-head>Explore the site</col-head>
+            <p class="col-link">Find a cinema</p>
+            <p class="col-link"><a ui-sref="whatson">What's on</a></p>
+            <p class="col-link">Book tickets</p>
+        </div>
+        <div class="footer-column">
+            <col-head>Help and support</col-head>
+            <p class="col-link">FAQs</p>
+            <p class="col-link">Accessibility</p>
+            <p class="col-link"><a ui-sref="contact">Contact us</a></p>
+        </div>
+        <div class="footer-column">
+            <col-head>About QA Cinemas</col-head>
+            <p class="col-link"><a ui-sref="contact">About us</a></p>
+            <p class="col-link">Careers</p>
+            <p class="col-link">Corporate events</p>
+        </div>
+    </div>
+    <div class="footer-cols">
+        <ll class="social">
+            <li><a href="https://www.facebook.com/QACinemas" class="fa fa-facebook"></a></li>
+            <li><a href="https://www.twitter.com/QACinemas" class="fa fa-twitter"></a></li>
+            <li><a href="https://plus.google.com/QACinemas" class="fa fa-google"></a></li>
+            <li><a href="https://www.youtube.com/QACinemas" class="fa fa-youtube"></a></li>
+            <li><a href="https://www.instagram.com/QACinemas" class="fa fa-instagram"></a></li>
+            <!--<li><a href="adminlogin.html">Admin login</a></li>-->
+        </ll>
+        <div class="login">
+            <!--<a href="adminlogin.html">Admin login</a>-->
+        </div>
+    </div>
+    <div class="bottom-footer">
+        <p class="copyright">© QA Cinemas 2017</p>
+    </div>
+</div>
+
+
+<!--    <div ui-view></div>
+    &lt;!&ndash; Angular modules&ndash;&gt;
     <script src="scripts/angular.min.js"></script>
     <script src="scripts/ui-router.min.js"></script>
 
-    <!-- App and state manager-->
+    &lt;!&ndash; App and state manager&ndash;&gt;
     <script src="app/app.js"></script>
     <script src="app/app-state-manager.js"></script>
 
-    <!-- Services-->
+    &lt;!&ndash; Services&ndash;&gt;
     <script src="app/service/dal/dal.js"></script>
     <script src="app/service/dal/movie.js"></script>
 
-    <!-- Features-->
-    <!--<script src="app/feature/dashboard/dashboard-controller.js"></script>-->
+    &lt;!&ndash; Features&ndash;&gt;
+    &lt;!&ndash;<script src="app/feature/dashboard/dashboard-controller.js"></script>&ndash;&gt;
     <script src="app/feature/movie/add/add-movie-controller.js"></script>
-    <script src="app/feature/movie/get/get-movie-controller.js"></script>
+    <script src="app/feature/movie/get/get-movie-controller.js"></script>-->
 
 
 

@@ -4,7 +4,7 @@
 
     angular.module('movieApp').config(function ($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise("/getmovie");
+        $urlRouterProvider.otherwise("/home");
 
         $stateProvider.state("dashboard", {
             url: "/dashboard",
@@ -15,9 +15,18 @@
         }).state("getmovie", {
             url: "/getmovie",
             templateUrl: "app/feature/movie/get/get-movie-partial.html"
+        }).state("home", {
+            url: "/home",
+            templateUrl: "app/feature/homepage/homepage-partial.html"
         }).state("whatson", {
             url: "/whatson",
             templateUrl: "app/feature/whatson/whatson.html"
+        }).state("contact", {
+            url: "/contact",
+            templateUrl: "app/feature/contact/contactus.html"
+        }).state("payment", {
+            url: "/payment",
+            templateUrl: "app/feature/payment/payment.html"
         })
     });
 }());

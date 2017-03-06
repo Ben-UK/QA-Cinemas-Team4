@@ -1,2 +1,1 @@
-var movieApp = angular.module('movieApp',['ui.router', 'angularModalService']);
-
+var movieApp = angular.module('movieApp',['ui.router']);
