@@ -18,5 +18,5 @@
         };
     };
 
-    angular.module('movieApp').controller('addMovieController', ['$state','movieDal',AddMovieController]);
+    angular.module('cinemaApp').controller('addMovieController', ['$state','movieDal',AddMovieController]);
 }());

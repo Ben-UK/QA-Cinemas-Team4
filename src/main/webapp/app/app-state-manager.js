@@ -2,7 +2,7 @@
 
 (function () {
 
-    angular.module('movieApp').config(function ($stateProvider, $urlRouterProvider) {
+    angular.module('cinemaApp').config(function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise("/home");
 
