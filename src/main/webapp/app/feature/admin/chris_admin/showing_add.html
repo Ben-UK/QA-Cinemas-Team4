@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QA Cinema Admin</title>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <div id="header-container">
+            <h1 id="logoName">QA Cinema Admin</h1>
+            <p id="login"><a href="login.html">Logout</a></p>
+        </div>
+    </div>
+    <div id="navbar">
+        <ul class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cinema_get.html">Cinema</a></li>
+            <li><a href="event_get.html">Event</a></li>
+            <li><a href="showing_get.html">Showing</a></li>
+        </ul>
+    </div>
+    <div id="main">
+        <div id="left-col">
+            <ul id="sidebar">
+                <li><a href="showing_add.html">Add</a></li>
+                <li><a href="showing_get.html">Get</a></li>
+                <li><a href="showing_update.html">Update</a></li>
+                <li><a href="showing_delete.html">Delete</a></li>
+            </ul>
+        </div>
+
+        <div id="right-col">
+            <br/>
+            <div id="right-col-content">
+                <form id="admin-form" action="#">
+                    <fieldset>
+                        <legend>Create New Showing</legend>
+                        <div class="location-div">
+                            <div class ="showing">
+                                <label class="location-label" for="showing-cinema">Cinema:</label>
+                                <select id="showing-cinema">
+                                    <option>Leeds</option>
+                                    <option>Manchester</option>
+                                    <option>Oldham</option>
+                                </select>
+
+                            </div>
+
+                            <div class ="showing">
+                                <label class="location-label" for="showing-event">Event:</label>
+                                <select id="showing-event">
+                                    <option>Terminator</option>
+                                    <option>Terminator 2</option>
+                                    <option>Terminator 3</option>
+                                </select>
+
+                            </div>
+
+                            <div class ="showing">
+                                <label class="location-label" for="showing-date-time">Date and Time:</label>
+                                <input id="showing-date-time" type="text" value="Enter Showing Date and Time" maxlength="100" /><br/>
+                            </div>
+
+                            <div class ="showing">
+                                <label class="location-label" for="showing-seat-count">Seat Count:</label>
+                                <input id="showing-seat-count" type="text" value="Enter Showing Date and Time" maxlength="100" /><br/>
+                            </div>
+
+                            <input id="submit" type="submit" value="Submit" />
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div id="footer">
+        <p>Designed by Team 4</p>
+    </div>
+
+</div>
+</body>
+</html>
