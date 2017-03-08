@@ -4,5 +4,5 @@
         var vm = this;
     };
 
-    angular.module('movieStore').controller('homepageController', [HomepageController]);
+    angular.module('cinemaApp').controller('homepageController', [HomepageController]);
 }());
