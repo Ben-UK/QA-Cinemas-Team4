@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QA Cinema Admin</title>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <div id="header-container">
+            <h1 id="logoName">QA Cinema Admin</h1>
+            <p id="login"><a href="login.html">Logout</a></p>
+        </div>
+    </div>
+    <div id="navbar">
+        <ul class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cinema_get.html">Cinema</a></li>
+            <li><a href="event_get.html">Event</a></li>
+            <li><a href="showing_get.html">Showing</a></li>
+        </ul>
+    </div>
+    <div id="main">
+        <div id="left-col">
+            <ul id="sidebar">
+                <li><a href="cinema_add.html">Add</a></li>
+                <li><a href="cinema_get.html">Get</a></li>
+                <li><a href="cinema_update.html">Update</a></li>
+                <li><a href="cinema_delete.html">Delete</a></li>
+            </ul>
+        </div>
+
+        <div id="right-col">
+            <!--<div id="right-col-header-container">-->
+            <!--<h2>Cinema: Add</h2>-->
+            <!--</div>-->
+            <br/>
+            <div id="right-col-content">
+                <form id="admin-form" action="#">
+                    <fieldset>
+                        <legend>Update Cinema</legend>
+                        <div class="location-div">
+                            <select>
+                                <option>Select Cinema</option>
+                                <option>Leeds</option>
+                                <option>Manchester</option>
+                                <option>Oldham</option>
+                            </select>
+                            <br/>
+
+                            <label class="location-label" for="location">Location:</label>
+                            <input id="location" type="text" value="Enter New Cinema Location" maxlength="100" /><br/>
+                            <input id="submit" type="submit" value="Submit" />
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div id="footer">
+        <p>Designed by Team 4</p>
+    </div>
+
+</div>
+</body>
+</html>
