@@ -24,39 +24,45 @@
 <div ng-controller="getEventController as ctrl"> <!--data-ng-controller="homepageController as homeCtrl"-->
 <div class="slideshow-container">
 
+    <!--<div class="ptr" ng-init = "myVar = 'images/beast_small.jpg'">
+        <a target="_blank">
+            <img ng-src={{myVar}} width="100%">
+        </a>
+    </div>-->
+
     <img ng-src="images/batman%20-%20Copy.jpg" style="width:100%">
     <!--<img ng-src="images/beast%20-%20Copy.jpg" style="width:100%">
     <img ng-src="images/logan%20-%20Copy.jpg" style="width:100%">
     <img ng-src="images/moonlight%20-%20Copy.jpg" style="width:100%">
     <img ng-src="images/sing%20-%20Copy.jpg" style="width:100%">-->
 
-	<div class="mySlides fade">
+	<div class="mySlides fade" ng-init = "myVar1 = 'images/batman%20-%20Copy.jpg'">
         <div class="numbertext">1 / 5</div>
-        <img src="../../../images/batman%20-%20Copy.jpg" style="width:100%">
+        <img ng-src={{myVar1}} style="width:100%">
         <div class="text">The LEGO Batman Movie</div>
     </div>
 
-    <div class="mySlides fade">
+    <div class="mySlides fade" ng-init = "myVar2 = 'images/beast%20-%20Copy.jpg'">
         <div class="numbertext">2 / 5</div>
-        <img src="../../../images/beast%20-%20Copy.jpg" style="width:100%">
+        <img ng-src={{myVar2}} style="width:100%">
         <div class="text">Beauty and the Beast</div>
     </div>
 
-    <div class="mySlides fade">
+    <div class="mySlides fade" ng-init = "myVar3 = 'images/logan%20-%20Copy.jpg'">
         <div class="numbertext">3 / 5</div>
-        <img src="../../../images/logan%20-%20Copy.jpg" style="width:100%">
+        <img ng-src={{myVar3}} style="width:100%">
         <div class="text">Logan</div>
     </div>
 
-    <div class="mySlides fade">
+    <div class="mySlides fade" ng-init = "myVar4 = 'images/moonlight%20-%20Copy.jpg'">
         <div class="numbertext">4 / 5</div>
-        <img src="../../../images/moonlight%20-%20Copy.jpg" style="width:100%">
+        <img ng-src={{myVar4}} style="width:100%">
         <div class="text">Moonlight</div>
     </div>
 
-    <div class="mySlides fade">
+    <div class="mySlides fade" ng-init = "myVar5 = 'images/sing%20-%20Copy.jpg'">
         <div class="numbertext">5 / 5</div>
-        <img src="../../../images/sing%20-%20Copy.jpg" style="width:100%">
+        <img ng-src={{myVar5}} style="width:100%">
         <div class="text">Sing</div>
     </div>
 
@@ -119,7 +125,7 @@
 
 <div class="whats-on">
     <div class="posters">
-     	<div class="testresponsive" ng-repeat="event in ctrl.events">
+     	<div class="testresponsive" ng-repeat="event in ctrl.event">
             <div class="ptr" ng-init = "myVar = 'images/beast_small.jpg'">
                 <a target="_blank">
                     <img ng-src="images/{{event.eventID}}.jpg" width="100%">
