@@ -12,3 +12,4 @@
 
     angular.module("cinemaApp").service("eventService", ["eventDal", EventService]);
 }());
+

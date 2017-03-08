@@ -1,10 +1,4 @@
-function checkBookingDetails() {
-   //////////////// //TO DO///////////////////////
-    var passedCname = document.getElementById("cname").value;
-    var passedCcn = document.getElementById("ccn").value;
-    var passedCvv = document.getElementById("cvv").value;
-    var passedCemail = document.getElementById("cemail").value;
-
+function generateString() {
     var confirmMessageBlock = document.getElementById("confirmationMessageBlock");
 
     // Capital I, lower case L, capital o and the number 0 look too similar in certain fonts so have been removed
@@ -20,9 +14,4 @@ function checkBookingDetails() {
     document.getElementById("randomStringSlot").textContent = randomString;
 
     confirmMessageBlock.style.display = 'block';
-
-    var inputBlock = document.getElementById("inputBlock");
-    inputBlock.style.display = 'none';
-
-
 }
