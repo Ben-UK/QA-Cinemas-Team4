@@ -126,13 +126,67 @@ div.desc {
     float: left;
     width: 24.99999%;
     /*width: 12.49999%*/
+    /*height:1000px;*/
 }
+
+.testresponsive {
+    /*padding: 6px 6px;*/
+    padding: 1%;
+    float: left;
+    width: 24.99999%;
+    /*width: 12.49999%*/
+    /*height:1000px;*/
+}
+
+.ttitle {
+    font-family: sans-serif;
+    padding: 2%;
+    text-align: center;
+    margin: 1%;
+   /* height: 2%;*/
+    font-size: 1vw;
+}
+
+.tdesc {
+    font-family: sans-serif;
+    padding: 2%;
+    text-align: center;
+    margin: 1%;
+    /*height: 5%;*/
+    font-size: 0.8vw;
+}
+
+.ptr {
+    border: 1px solid #ccc;
+    height: 660px;
+}
+
+.ptr:hover{
+    border: 1px solid #777;
+}
+
+/*
+.ng-binding {
+    padding: 1%;
+    float: left;
+    width: 24.99999%;
+}
+*/
 
 @media only screen and (max-width: 1500px){
     .responsive {
         width: 33%;
         margin: 6px 0;
     }
+
+    .testresponsive {
+        width: 33%;
+        margin: 6px 0;
+    }
+    .ptr {
+        height: 350px;
+    }
+
 }
 
 /*@media only screen and (max-width: 1000px){
@@ -148,12 +202,30 @@ div.desc {
         width: 49.99999%;
         margin: 6px 0;
     }
+
+    .testresponsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+
+    .ptr {
+        height: 200px;
+    }
 }
 
 @media only screen and (max-width: 500px){
     .responsive {
         width: 100%;
     }
+    .testresponsive {
+        width: 100%;
+    }
+
+
+    /*not needed when only one shown*/
+    /*.ptr {
+        height: 700px;
+    }*/
 }
 
 .clearfix:after {
@@ -296,8 +368,8 @@ div.desc {
 .social {
     /*border: solid;*/
     background-color: royalblue;
-    align:center;
-    margin:auto;
+    text-align:center;
+    margin:0 auto;
 }
 
 .copyright {
@@ -445,6 +517,11 @@ col-head {
     width: 23%;
     float: left;
     overflow: hidden;
+}
+
+.payment {
+    margin: auto;
+    padding: 1%;
 }
 
 /*search bar 2*/

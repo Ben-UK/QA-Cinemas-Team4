@@ -1,18 +1,24 @@
 (function() {
 
-    var GetCinemaController =  function(cinemaDal) {
+    var GetCinemaController =  function(cinemaService) {
         var vm = this;
 
         function init() {
-            cinemaDal.getCinemas().then(function (results) {
+            cinemaService.getCinemas().then(function (results) {
+                console.log("In Cinema Controller");
                 vm.cinemas  = results;
             }, function (error) {
                 vm.error = true;
                 vm.errorMessage = error;
             });
         }
+
+        function showingEvents($scope){
+
+        }
+
         init();
     };
 
-    angular.module('cinemaApp').controller('getCinemaController', ['cinemaDal', GetCinemaController]);
+    angular.module('cinemaApp').controller('getCinemaController', ['cinemaService', GetCinemaController]);
 }());

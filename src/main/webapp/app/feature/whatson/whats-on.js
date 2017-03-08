@@ -1,24 +1,3 @@
-
-movieApp.controller('WhatOnController', ['$scope', 'ModalService', function($scope, ModalService) {
-
-  $scope.customResult = null;
-
-  $scope.showCustom = function() {
-
-    ModalService.showModal({
-      templateUrl: "app/feature/custom/custom.html",
-      controller: "CustomController"
-    }).then(function(modal) {
-      modal.close.then(function(result) {
-        $scope.customResult = "All good!";
-      });
-    });
-
-  };
-
-}]);
-
-
 function getCertificationImage(string){
     if (string == "U"){
         return "../../../images/U.png";
