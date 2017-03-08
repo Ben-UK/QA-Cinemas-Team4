@@ -1,9 +1,34 @@
-<link rel="stylesheet" href="../../../css/main.css">
+<!--<link rel="stylesheet" href="../../../css/main.css">-->
+<script src="film-quick-book.js"></script>
+<script src="/lib/w3.js"></script>
+
+<!--
+<img class="nature" ng-src="images/batman%20-%20Copy.jpg" width="50%">
+<img class="nature" ng-src="images/beast%20-%20Copy.jpg" width="50%">
+<img class="nature" ng-src="images/logan%20-%20Copy.jpg" width="50%">
+<img class="nature" ng-src="images/moonlight%20-%20Copy.jpg" width="50%">
+<img class="nature" ng-src="images/sing%20-%20Copy.jpg" width="50%">
+
+<p>
+    <button onclick="myShow.previous()">Previous</button>
+    <button onclick="myShow.next()">Next</button>
+</p>
+
+<script>
+    myShow = w3.slideshow(".nature", 0);
+</script>
+-->
+
 
 <!--Homepage content-->
 <div ng-controller="getEventController as ctrl"> <!--data-ng-controller="homepageController as homeCtrl"-->
-<!--<div data-ng-controller="eventsController as eventCtrl">-->
 <div class="slideshow-container">
+
+    <img ng-src="images/batman%20-%20Copy.jpg" style="width:100%">
+    <!--<img ng-src="images/beast%20-%20Copy.jpg" style="width:100%">
+    <img ng-src="images/logan%20-%20Copy.jpg" style="width:100%">
+    <img ng-src="images/moonlight%20-%20Copy.jpg" style="width:100%">
+    <img ng-src="images/sing%20-%20Copy.jpg" style="width:100%">-->
 
     <div class="mySlides fade">
         <div class="numbertext">1 / 5</div>
@@ -92,198 +117,19 @@
 
 <br>
 
-
-
-<!--
-<div>
-    &lt;!&ndash;<h1>LIST OF FILMS</h1>
-    <br/><br/>&ndash;&gt;
-
-    <div ng-repeat="event in ctrl.events">
-        {{event.title}}
-        {{event.description}}
-    </div>
-
-</div>-->
-
-<div  class="whats-on">
+<div class="whats-on">
     <div class="posters">
-        <div class="responsive" ng-repeat="event in ctrl.events">
-            <div class="img">
-                <!--<a target="_blank" href="../../../images/beast_small.jpg.jpg">
-                    <img src="../../../images/beast_small.jpg" alt="test" width="220" height="320"> &lt;!&ndash;alt={{event.title}}&ndash;&gt;
-                </a>-->
-                <div class="title">{{event.title}}</div>
-                <div class="desc">{{event.description}}</div>
+        <div class="testresponsive" ng-repeat="event in ctrl.events">
+            <div class="ptr" ng-init = "myVar = 'images/beast_small.jpg'">
+                <a target="_blank">
+                    <img ng-src="images/{{event.eventID}}.jpg" width="100%">
+                </a>
+                <div class="ttitle">{{event.title}}</div>
+                <div class="tdesc">{{event.description}}</div>
             </div>
         </div>
     </div>
 </div>
 
-<!--<div class="whats-on">
-    <div class="posters">
-        <div class="responsive">
-            <div class="img">
-                <a target="_blank" href="../../../images/wellness_small.jpg">
-                    <img src="../../../images/wellness_small.jpg" alt="A Cure For Wellness" width="220" height="320">
-                </a>
-                <div class="title">A Cure For Wellness</div>
-                &lt;!&ndash;<div class="desc">A Cure For Wellness description</div>&ndash;&gt;
-                <div class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
-                </div>
-                <button class="time" onclick="setElement(1,1,'m',12)">12:00</button>
-                <button class="time" onclick="setElement(2,2,'tu',14)">14:00</button>
-            </div>
-        </div>
 
-        <div class="responsive">
-            <div class="img">
-                <a target="_blank" href="../../../images/beast_small.jpg">
-                    <img src="../../../images/beast_small.jpg" alt="Beauty and the Beast" width="220" height="320">
-                </a>
-                <div class="title">Beauty and the Beast</div>
-                &lt;!&ndash;<div class="desc">Beauty and the Beast description</div>&ndash;&gt;
-                <div class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
-                </div>
-                <button class="time" onclick="setElement(3,1,'w',16)">16:00</button>
-                <button class="time" onclick="setElement(1,2,'th',18)">18:00</button>
-            </div>
-        </div>
-
-        <div class="responsive">
-            <div class="img">
-                <a target="_blank" href="../../../images/fences_small.jpg">
-                    <img src="../../../images/fences_small.jpg" alt="Fences" width="220" height="320">
-                </a>
-                <div class="title">Fences</div>
-                &lt;!&ndash;<div class="desc">Fences description</div>&ndash;&gt;
-                <div class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
-                </div>
-                <button class="time" onclick="setElement(2,1,'f',20)">20:00</button>
-                <button class="time" onclick="setElement(3,2,'sa',12)">12:00</button>
-            </div>
-        </div>
-
-        <div class="responsive">
-            <div class="img">
-                <a target="_blank" href="../../../images/figures_small.jpg">
-                    <img src="../../../images/figures_small.jpg" alt="Hidden Figures" width="220" height="320">
-                </a>
-                <div class="title">Hidden Figures</div>
-                &lt;!&ndash;<div class="desc">Hidden Figures description</div>&ndash;&gt;
-                <div class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
-                </div>
-                <button class="time" onclick="setElement(1,1,'su',14)">14:00</button>
-                <button class="time" onclick="setElement(2,2,'m',16)">16:00</button>
-            </div>
-        </div>
-
-        <div class="responsive">
-            <div class="img">
-                <a target="_blank" href="../../../images/logan_small.jpg">
-                    <IMG src="../../../images/logan_small.jpg" alt="Logan" width="220" height="320">
-                </a>
-                <div class="title">Logan</div>
-                &lt;!&ndash;<div class="desc">Logan description</div>&ndash;&gt;
-                <div class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
-                </div>
-                <button class="time" onclick="setElement(3,1,'tu',18)">18:00</button>
-                <button class="time" onclick="setElement(1,2,'w',20)">20:00</button>
-            </div>
-        </div>
-
-        <div class="responsive">
-            <div class="img">
-                <a target="_blank" href="../../../images/moonlight_small.jpg">
-                    <img src="../../../images/moonlight_small.jpg" alt="Moonlight" width="220" height="320">
-                </a>
-                <div class="title">Moonlight</div>
-                &lt;!&ndash;<div class="desc">Moonlight description</div>&ndash;&gt;
-                <div class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
-                </div>
-                <button class="time" onclick="setElement(2,1,'th',12)">12:00</button>
-                <button class="time" onclick="setElement(3,2,'f',14)">14:00</button>
-            </div>
-        </div>
-
-        <div class="responsive">
-            <div class="img">
-                <a target="_blank" href="../../../images/sing_small.jpg">
-                    <img src="../../../images/sing_small.jpg" alt="Sing" width="220" height="320">
-                </a>
-                <div class="title">Sing</div>
-                &lt;!&ndash;<div class="desc">Sing description</div>&ndash;&gt;
-                <div class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
-                </div>
-                <button class="time" onclick="setElement(1,1,'sa',16)">16:00</button>
-                <button class="time" onclick="setElement(2,2,'su',18)">18:00</button>
-            </div>
-        </div>
-
-        <div class="responsive">
-            <div class="img">
-                <a target="_blank" href="../../../images/split_small.jpg">
-                    <img src="../../../images/split_small.jpg" alt="Split" width="220" height="320">
-                </a>
-                <div class="title">Split</div>
-                &lt;!&ndash;<div class="desc">Split description</div>&ndash;&gt;
-                <div class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
-                </div>
-                <button class="time" onclick="setElement(3,1,'m',20)">20:00</button>
-                <button class="time" onclick="setElement(1,2,'tu',12)">12:00</button>
-            </div>
-        </div>
-
-        <div class="responsive">
-            <div class="img">
-                <a target="_blank" href="../../../images/t2_small.jpg">
-                    <img src="../../../images/t2_small.jpg" alt="T2: Trainspotting" width="220" height="320">
-                </a>
-                <div class="title">T2: Trainspotting</div>
-                &lt;!&ndash;<div class="desc">T2: Trainspotting description</div>&ndash;&gt;
-                <div class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
-                </div>
-                <button class="time" onclick="setElement(2,1,'w',14)">14:00</button>
-                <button class="time" onclick="setElement(3,2,'th',16)">16:00</button>
-            </div>
-        </div>
-
-        <div class="responsive">
-            <div class="img">
-                <a target="_blank" href="../../../images/batman_small.jpg">
-                    <img src="../../../images/batman_small.jpg" alt="The LEGO Batman Movie" width="220" height="320">
-                </a>
-                <div class="title">The LEGO Batman Movie</div>
-                &lt;!&ndash;<div class="desc">The LEGO Batman Movie description</div>&ndash;&gt;
-                <div class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam mauris lacus, venenatis in orci at, aliquam pellentesque nisi. Proin ut pulvinar ante, eget tempus mi.
-                </div>        <div>
-                <button class="time" onclick="setElement(1,1,'f',18)">18:00</button>
-                <button class="time" onclick="setElement(2,2,'sa',20)">20:00</button>
-            </div>
-
-            </div>
-
-        </div>
-    </div>
-</div>-->
 </div>

@@ -5,7 +5,7 @@
     <title>QA Cinemas</title>
 
     <script src="app/set-quick-book.js"></script>
-
+    <script src="app/feature/payment/check-booking-details.js"></script>
 
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -40,17 +40,106 @@
 </div>
 </div>
 
-<!--<br>-->
+<!--slideshow test-->
+
+<!--<div ng-if="$location.path() === home" class="slideshow-container">
+
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 5</div>
+        <img src="images/batman%20-%20Copy.jpg" style="width:100%">
+        <div class="text">The LEGO Batman Movie</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 5</div>
+        <img src="images/beast%20-%20Copy.jpg" style="width:100%">
+        <div class="text">Beauty and the Beast</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 5</div>
+        <img src="images/logan%20-%20Copy.jpg" style="width:100%">
+        <div class="text">Logan</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">4 / 5</div>
+        <img src="images/moonlight%20-%20Copy.jpg" style="width:100%">
+        <div class="text">Moonlight</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">5 / 5</div>
+        <img src="images/sing%20-%20Copy.jpg" style="width:100%">
+        <div class="text">Sing</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+
+<div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+</div>
+
+<script>
+    var slideIndex = 0;
+    showSlides();
+
+    function plusSlides(n) {
+        moveSlides(slideIndex += n);
+    }
+
+    function moveSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+    }
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex> slides.length) {slideIndex = 1}
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 5000); // Change image every 2 seconds
+    }
+</script>-->
+
+<!--slideshow test end-->
+
 
 <!--Homepage stuff-->
-
-<br>
 
 <!--homepage test-->
 <div ui-view></div>
 <!-- Angular modules-->
 <script src="scripts/angular.min.js"></script>
 <script src="scripts/ui-router.min.js"></script>
+<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js"></script> &lt;!&ndash;added for unique&ndash;&gt;-->
 
 <!-- App and state manager-->
 <script src="app/app.js"></script>
@@ -73,22 +162,21 @@
 
 
 <!--Get times and days from the showing-->
-<!--<div ng-controller="getEventController as eCtrl">-->
+<div ng-controller="getEventController as eCtrl">
 <!--<div ng-controller="getCinemaController as cCtrl">-->
 <div class="quick-book">
     <div class="qb">
         Quick book:
         Pick a cinema:
-        <div ng-controller="getCinemaController as cCtrl">
+        <!--<div ng-controller="getCinemaController as cCtrl">-->
         <select class="form-control fancy" name="cinema" id="main">
             <option selected value="select">-----Select-----</option>
-            <option ng-repeat="cinema in cCtrl.cinemas">{{cinema.location}}</option>
-            <!--<option value="1">Test location 1</option>
-            <option value="2">Test location 2</option>
-            <option value="3">Test location 3</option>
-            <option value="4">Test location 4</option>-->
+            <!--<option ng-repeat="cinema in cCtrl.cinemas">{{cinema.location}}</option>-->
+            <option value="1">Manchester</option>
+            <option value="2">London</option>
+            <option value="3">Leeds</option>
         </select>
-        </div>
+        <!--</div>-->
 
         <!--<select class="form-control fancy" name="cinema" id="main">
             <option selected value="select">-&#45;&#45;&#45;&#45;Select-&#45;&#45;&#45;&#45;</option>
@@ -96,12 +184,12 @@
         </select>-->
 
         Pick a film:
-        <div ng-controller="getEventController as eCtrl">
+        <!--<div ng-controller="getEventController as eCtrl">-->
         <select class="form-control fancy" name="film" id="film" disabled >
             <option selected value="select">-----Select-----</option>
             <option ng-repeat="event in eCtrl.events">{{event.title}}</option> <!--value=film id-->
         </select>
-        </div>
+        <!--</div>-->
 
         Pick a day:
         <select class="form-control2 fancy" name="day" id="day" disabled>
@@ -123,10 +211,19 @@
             <option value="18">18:00</option>
             <option value="20">20:00</option>
         </select>
-        <input class="go" type="submit" value="Go" ui-sref="payment"/>
+        <!--<input class="go" type="submit" value="Go" onclick="checkBookingDetails()"/>-->
+        <!--<button type="submit" onclick="generateString()">Go</button>-->
+        <button class="go" type="submit" ui-sref="payment">Go</button>
+
+        <div style="display:none" id="confirmationMessageBlock">
+            Booking Successful. Your unique booking code is:<br>
+            <h2><p id="randomStringSlot"></p></h2> <br>
+            <button type="submit" onclick="print()"> <h4> Print this Page</h4> </button>
+        </div>
+
     </div>
 </div>
-<!--</div>-->
+</div>
 <!--</div>-->
 
 <!--put in new file-->
