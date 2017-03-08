@@ -7,6 +7,7 @@
             eventService.getEvents().then(function (results) {
                 console.log("In Event Controller");
                 vm.event  = results;
+                console.log()
             }, function (error) {
                 vm.error = true;
                 vm.errorMessage = error;

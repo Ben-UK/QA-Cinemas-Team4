@@ -1,6 +1,3 @@
-
-
-
 function getCertificationImage(string){
     if (string == "U"){
         return "../../../images/U.png";
