@@ -1,11 +1,12 @@
 (function() {
 
-    var GetEventController =  function(eventDal) {
+    var GetEventController =  function(eventService) {
         var vm = this;
 
         function init() {
-            eventDal.getEvents().then(function (results) {
-                vm.events  = results;
+            eventService.getEvents().then(function (results) {
+                console.log("In Event Controller");
+                vm.event  = results;
             }, function (error) {
                 vm.error = true;
                 vm.errorMessage = error;
@@ -14,5 +15,5 @@
         init();
     };
 
-    angular.module('cinemaApp').controller('getEventController', ['eventDal', GetEventController]);
+    angular.module('cinemaApp').controller('getEventController', ['eventService', GetEventController]);
 }());
