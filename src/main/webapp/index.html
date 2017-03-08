@@ -68,8 +68,39 @@
 
 
 <!--Get times and days from the showing-->
+<form action="app/feature/payment/payment.html">
+    <input type="text" name="cinema" />
+    <input type="text" name="film" />
+    <input type="text" name="day" />
+    <input type="text" name="time" />
+    <input type="submit" value="submit" onclick="passData(cinema,film,day,time)"/>
+</form>
+
+<script>
+
+    function passData(string1, string2, string3, string4){
+        var cinema = {
+            Data1 : string1,
+            Data2 : string2,
+            Data3 : string3,
+            Data4 : string4
+        };
+
+        cinema = JSON.stringify(cinema);
+        cinema = JSON.parse(cinema);
+        cinema = btoa(cinema);
+        sessionStorage.setItem('ourData', cinema);
+
+    }
+
+
+
+
+</script>
 <div class="quick-book">
     <div class="qb">
+        <form name="quickBook" method="link" action="app/feature/payment/payment.html">
+
         Quick book:
         Pick a cinema:
         <select class="form-control fancy" name="cinema" id="main">
@@ -81,6 +112,7 @@
         Pick a film:
         <select class="form-control fancy" name="film" id="film" disabled>
             <option selected value="select">-----Select-----</option>
+            <option value="1">Test film 1</option>
             <option value="1">Test film 1</option>
             <option value="2">Test film 2</option>
         </select>
@@ -104,7 +136,8 @@
             <option value="18">18:00</option>
             <option value="20">20:00</option>
         </select>
-        <input class="go" type="submit" value="Go" ui-sref="payment"/>
+        <input id="submit" type="submit" value="Go" ui-sref="payment" onclick="passData(cinema,film,day,time)"/>
+        </form>
     </div>
 </div>
 

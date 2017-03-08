@@ -11,25 +11,92 @@
 
                <div class="panel-body"> <!-- To be filled with the JSON content held in the Showing field !-->
                    <ul>
-                       <h4>
-                       <li>Location: Manchester<!-- Showing.location !--> </li><br>
-                       <li>Film/Activity: Barbie and the Magic of Pegasus <!-- Showing.event !--> </li><br>
-                       <li>Date/Time: 6th March 16:45 <!-- Showing.datetime !--> </li><br>
-                       <li>Adults: 1<!-- COUNT ticket.type = adult !-->  </li><br>
-                       <li>Children: 3<!-- COUNT ticket.type = kiddy !--> </li><br>
-                       <li>Price: £25 <!-- Inferred from adult and children count !--> </li><br>
-                       </h4>
+                       <li id="cinema"></li>
+                       <li> test </li>
+                       <li id="test"></li>
                    </ul>
+
+                   <script>
+
+                       function loadData() {
+                           var account = sessionStorage.getItem('ourData');
+                            var data = atob(account);
+                           var url = location.search;
+                           var myDiv = document.getElementById('cinema');
+                           document.getElementById('test').innerHTML = data;
+                           myDiv.innerHTML = delineate(data);
+
+                           function delineate(str){
+                               var left = str.substring(2,str);
+                               return left + " " + str;
+                               /*
+                                theleft = str.indexOf("=") + 1;
+                                theright = str.lastIndexOf("&");
+                                return(str.substring(theleft, theright));
+                                */
+                           }
+
+
+                       }
+
+
+                       loadData();
+
+                   </script>
+
+
                </div>
            </div>
        </div>
+
+    <form METHOD="LINK" ACTION="jspass2.html">
+        Card Holder's Name: <input type="text" placeholder ="Enter Name"  name="customerName" required id="cname" style="width:300px;"><br></br>
+        Credit Card Number: <input type="text"  placeholder="Enter Credit Card Number" name="creditCardNumber"  maxlength="16" required id="ccn" style="width:230px;"><br></br>
+        Card Expiry Date: <input type="text"  placeholder="Ex. 123" name="cardVerificationValue" maxlength="3" required id="cvv" style="width:80px;"><br></br>
+
+    <br>
+
+
+        <select class="input-block-level">
+            <option>January</option>
+            <option>February</option>
+            <option>March</option>
+            <option>April</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>August</option>
+            <option>September</option>
+            <option>October</option>
+            <option>November</option>
+            <option>December</option>
+        </select>
+        <select class="input-block-level">
+            <option>2017</option>
+            <option>2018</option>
+            <option>2019</option>
+            <option>2020</option>
+            <option>2021</option>
+            <option>2022</option>
+            <option>2023</option>
+            <option>2024</option>
+            <option>2025</option>
+        </select>
+
+
+        Email:
+        <input type="text" placeholder ="Enter Email"  name="customerEmail" required id="cemail" style="width:300px;"><br><br>
+        <button type="submit" onclick="checkBookingDetails()">  Confirm Booking </button>
+         <br><br>
+
+    </form>
 
        <br>
        <div class="container">
 
            <div class="panel panel-default">
                <div class="panel-heading text-center">
-                   <h3> Confirm Your Booking</h3>
+
                </div>
 
                <div class="panel-body">
@@ -45,45 +112,7 @@
                               <input type="text" placeholder ="Enter Discount Code"  name="discountCode" required id="dcode"><br><br>
                           </div> !-->
 
-                          Card Holder's Name:
-                          <input type="text" placeholder ="Enter Name"  name="customerName" required id="cname" style="width:300px;"><br><br>
-                          Credit Card Number:
-                          <input type="text"  placeholder="Enter Credit Card Number" name="creditCardNumber"  maxlength="16" required id="ccn" style="width:230px;"><br><br>
-                          Card Verification Value:
-                          <input type="text"  placeholder="Ex. 123" name="cardVerificationValue" maxlength="3" required id="cvv" style="width:80px;"> <br><br>
-                          Card Expiry Date:
-                          <select class="input-block-level">
-                              <option>January</option>
-                              <option>February</option>
-                              <option>March</option>
-                              <option>April</option>
-                              <option>May</option>
-                              <option>June</option>
-                              <option>July</option>
-                              <option>August</option>
-                              <option>September</option>
-                              <option>October</option>
-                              <option>November</option>
-                              <option>December</option>
-                          </select>
-                          <select class="input-block-level">
-                              <option>2017</option>
-                              <option>2018</option>
-                              <option>2019</option>
-                              <option>2020</option>
-                              <option>2021</option>
-                              <option>2022</option>
-                              <option>2023</option>
-                              <option>2024</option>
-                              <option>2025</option>
-                          </select>
 
-                          <br><br>
-
-                          Email:
-                          <input type="text" placeholder ="Enter Email"  name="customerEmail" required id="cemail" style="width:300px;"><br><br>
-
-                          <button type="submit" onclick="checkBookingDetails()">  Confirm Booking </button> <br><br>
                       </h4>
                    </div>
 
