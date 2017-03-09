@@ -1,77 +1,47 @@
-<!--<link rel="stylesheet" href="../../../css/main.css">-->
+
 <script src="film-quick-book.js"></script>
 <script src="/lib/w3.js"></script>
-
-<!--
-<img class="nature" ng-src="images/batman%20-%20Copy.jpg" width="50%">
-<img class="nature" ng-src="images/beast%20-%20Copy.jpg" width="50%">
-<img class="nature" ng-src="images/logan%20-%20Copy.jpg" width="50%">
-<img class="nature" ng-src="images/moonlight%20-%20Copy.jpg" width="50%">
-<img class="nature" ng-src="images/sing%20-%20Copy.jpg" width="50%">
-
-<p>
-    <button onclick="myShow.previous()">Previous</button>
-    <button onclick="myShow.next()">Next</button>
-</p>
-
-<script>
-    myShow = w3.slideshow(".nature", 0);
-</script>
--->
-
 
 <!--Homepage content-->
 <div ng-controller="getEventController as ctrl"> <!--data-ng-controller="homepageController as homeCtrl"-->
 <div class="slideshow-container">
 
-    <!--<div class="ptr" ng-init = "myVar = 'images/beast_small.jpg'">
-        <a target="_blank">
-            <img ng-src={{myVar}} width="100%">
-        </a>
-    </div>-->
 
-    <img ng-src="images/batman%20-%20Copy.jpg" style="width:100%">
-    <!--<img ng-src="images/beast%20-%20Copy.jpg" style="width:100%">
-    <img ng-src="images/logan%20-%20Copy.jpg" style="width:100%">
-    <img ng-src="images/moonlight%20-%20Copy.jpg" style="width:100%">
-    <img ng-src="images/sing%20-%20Copy.jpg" style="width:100%">-->
+    <img class="homepage-image" ng-src="images/batman%20-%20Copy.jpg" >
 
 	<div class="mySlides fade" ng-init = "myVar1 = 'images/batman%20-%20Copy.jpg'">
         <div class="numbertext">1 / 5</div>
-        <img ng-src={{myVar1}} style="width:100%">
+        <img class="homepage-image" ng-src={{myVar1}} >
         <div class="text">The LEGO Batman Movie</div>
     </div>
 
     <div class="mySlides fade" ng-init = "myVar2 = 'images/beast%20-%20Copy.jpg'">
         <div class="numbertext">2 / 5</div>
-        <img ng-src={{myVar2}} style="width:100%">
+        <img class="homepage-image" ng-src={{myVar2}} >
         <div class="text">Beauty and the Beast</div>
     </div>
 
     <div class="mySlides fade" ng-init = "myVar3 = 'images/logan%20-%20Copy.jpg'">
         <div class="numbertext">3 / 5</div>
-        <img ng-src={{myVar3}} style="width:100%">
+        <img class="homepage-image" ng-src={{myVar3}} >
         <div class="text">Logan</div>
     </div>
 
     <div class="mySlides fade" ng-init = "myVar4 = 'images/moonlight%20-%20Copy.jpg'">
         <div class="numbertext">4 / 5</div>
-        <img ng-src={{myVar4}} style="width:100%">
+        <img class="homepage-image" ng-src={{myVar4}} >
         <div class="text">Moonlight</div>
     </div>
 
     <div class="mySlides fade" ng-init = "myVar5 = 'images/sing%20-%20Copy.jpg'">
         <div class="numbertext">5 / 5</div>
-        <img ng-src={{myVar5}} style="width:100%">
+        <img class="homepage-image" ng-src={{myVar5}} >
         <div class="text">Sing</div>
     </div>
 
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
 </div>
 
-<div style="text-align:center">
+<div class="dot-div">
     <span class="dot"></span>
     <span class="dot"></span>
     <span class="dot"></span>
@@ -80,12 +50,10 @@
 </div>
 
 <script>
+
+
     var slideIndex = 0;
     showSlides();
-
-    function plusSlides(n) {
-        moveSlides(slideIndex += n);
-    }
 
     function moveSlides(n) {
         var i;
@@ -123,19 +91,22 @@
 
 <br>
 
-<div class="whats-on">
-    <div class="posters">
-     	<div class="testresponsive" ng-repeat="event in ctrl.event">
-            <div class="ptr" ng-init = "myVar = 'images/beast_small.jpg'">
+    <div class="whats-on">
+        <div class="posters">
+            <div class="testresponsive" ng-repeat="event in ctrl.event">
                 <a target="_blank">
-                    <img ng-src="images/{{event.eventID}}.jpg" width="100%">
+                    <div class="ptr" ng-init="myVar = 'images/beast_small.jpg'">
+
+                        <img class="poster-img" ng-src="images/{{event.eventID}}.jpg" width="100%">
+
+
+                        <div class="ttitle">{{event.title}}</div>
+                        <div class="tdesc">{{event.description}}</div>
+                    </div>
                 </a>
-                <div class="ttitle">{{event.title}}</div>
-                <div class="tdesc">{{event.description}}</div>
             </div>
         </div>
     </div>
-</div>
 
 
 </div>
