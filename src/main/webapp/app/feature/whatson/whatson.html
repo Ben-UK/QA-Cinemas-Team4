@@ -1,55 +1,84 @@
-
 <div ng-controller="getCinemaController as ctrl">
 
-<div class="container-fluid bg-4" align="center" >
-  <form text-center>
+    <div class="container-fluid bg-4" align="center">
+        <div class="whats-on-content">
+            <h1>Whats on at your local cinema</h1>
 
-    <select ng-model="selectedCinema" ng-options="cinema.location for cinema in ctrl.cinemas"></select>
+            <form>
 
-    <label>Search: <input type="text" ng-model="searchText" ></label>
-  <div ng-show="selectedCinema">
-    <h1>You selected : {{selectedCinema.location}}</h1>
+            <select class="select-cinema" ng-model="selectedCinema"
+                    ng-options="cinema.location for cinema in ctrl.cinemas" ng-value="Select a Cinema">
+                <option value="">Please select one</option>
+            </select>
 
-    <div ng-repeat="n in [0, 1, 2] | filter: searchText" >
+            <label id="search-label">Search: </label>
+                <input id="search-input" type="text" ng-model="searchText" />
 
-      <table width="90%">
-        <tr>
-          <th></th>
-          <th>
-            <h2>{{selectedCinema.showings[n].event.title}}</h2>
-              <img ng-src="images/{{selectedCinema.showings[n].event.certification}}.png" ng-href="https://www.myvue.com/">
+            <div ng-show="selectedCinema">
+                <h1>You selected : {{selectedCinema.location}}</h1>
+
+                <div ng-repeat="n in [0, 1, 2] | filter: searchText">
+
+                    <div id="films">
+
+                        <div class="whatson-film">
+
+                            <div id="left-col-whatson">
+
+                                <div id="whatson-poster">
+                                    <img class="whatson-image"
+                                         ng-src="images/{{selectedCinema.showings[n].event.eventID}}.jpg">
+                                </div>
+
+                            </div>
+
+                            <div id="right-col-whatson">
+<div class="page-content">
+                                <div id="whatson">
+                                    <h2>{{selectedCinema.showings[n].event.title}}</h2>
+                                    <!--certification pic-->
+                                    <img ng-src="images/{{selectedCinema.showings[n].event.certification}}.png"
+                                         ng-href="https://www.myvue.com/">
+                                </div>
 
 
-          </th>
-        </tr>
-        <tr>
-          <td width="20%"><img ng-src="images/{{selectedCinema.showings[n].event.eventID}}.jpg" width="260" height="388"></td>
-          <td width="80%">
-            <p><strong>Synopsis</strong></p>
-            <p>{{selectedCinema.showings[n].event.description}}</p>
-            <p><strong>Date</strong></p>
-            <p>{{selectedCinema.showings[n].event.releaseDate.dayOfMonth}}</p>
-            <p><strong>Release Date</strong></p>
-            <p>{{selectedCinema.showings[n].event.releaseDate.dayOfMonth}}/{{selectedCinema.showings[n].event.releaseDate.month}}/{{selectedCinema.showings[n].event.releaseDate.year}}</p>
-            <p><strong>Showings</strong></p>
-            <p>{{selectedCinema.showings[n].dateTime.hourOfDay}}:{{selectedCinema.showings[n].dateTime.minute}}</p>
-            <a ng-href="https://www.myvue.com/"><strong>View Trailer</strong></a>
-          </td>
-        </tr>
-      </table>
+                                <div id="whatson-info">
+                                    <ul class="details-list">
+                                        <li class="list-headers">Synopsis: </li>
+                                        <li>{{selectedCinema.showings[n].event.description}}</li>
+                                        <li class="list-headers">Date: </li>
+                                        <li>{{selectedCinema.showings[n].event.releaseDate.dayOfMonth}}</li>
+                                        <li class="list-headers">Release Date:</li>
+                                        <li>
+                                            {{selectedCinema.showings[n].event.releaseDate.dayOfMonth}}/{{selectedCinema.showings[n].event.releaseDate.month}}/{{selectedCinema.showings[n].event.releaseDate.year}}
+                                        </li>
+                                        <li class="list-headers">Showings:</li>
+                                        <li>
+                                            {{selectedCinema.showings[n].dateTime.hourOfDay}}:{{selectedCinema.showings[n].dateTime.minute}}
+                                        </li>
+                                        <a ng-href="https://www.myvue.com/">View Trailer</a>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
     </div>
-  </div>
-
-  </form>
-</div>
-
+    </div>
 </div>
 
 <script type='text/javascript'>
-  function view(){
-      var test = document.getElementById("films");
-      test.style.display='none';
-  }
+    function view() {
+        var test = document.getElementById("films");
+        test.style.display = 'none';
+    }
 </script>
 
 <script>

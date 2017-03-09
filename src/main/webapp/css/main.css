@@ -5,57 +5,6 @@
 body {
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-ll {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: royalblue;
-}
-
-/*link underline*/
-a:link {
-    text-decoration: none;
-}
-
-a:visited {
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: none;
-    cursor: pointer;
-}
-
-a:active {
-    text-decoration: underline;
-}
-
-/**/
-
 .carousel {
     width: 100%;
     float: left;
@@ -87,9 +36,6 @@ a:active {
     height: 470px;
     margin-bottom: 200px;
 }
-.poster-img {
-    border-bottom: 1px solid #111111;
-}
 
 .ttitle {
     font-family: sans-serif;
@@ -110,6 +56,7 @@ a:active {
 
 .ptr {
     border: 1px solid transparent;
+    padding-bottom: 3%;
 }
 
 .ptr:hover {
@@ -282,9 +229,9 @@ a:active {
 }
 
 .footer-cols {
-    width: 60%;
     overflow: hidden;
-    margin: auto;
+    margin: 0 0 0 380px;
+    width: 700px;
 }
 
 .footer-column {
@@ -301,10 +248,20 @@ a:active {
     text-align: center;
 }
 
+.footer-cols {
+    margin: 0 auto;
+}
+
 .social {
     background-color: royalblue;
     text-align: center;
     margin: 0 auto;
+    list-style: none;
+}
+
+.social li {
+    float:left;
+    margin-right: 20px;
 }
 
 .copyright {
@@ -369,12 +326,12 @@ a:active {
     font-size: 1vw;
     float: left;
     overflow: hidden;
-    width: 98%; /*48*/
-    /* height: 80%;*/
+    width: 98%;
     cursor: pointer;
     border-radius: 15px;
     margin: 1%;
     height: 2.5vw;
+    text-decoration: none;
 }
 
 .quick-book {
@@ -454,6 +411,7 @@ input[type=search] {
 input::-webkit-search-decoration,
 input::-webkit-search-cancel-button {
     display: none;
+
 }
 
 /*implement dynamic resizing*/
@@ -585,7 +543,7 @@ input::-webkit-input-placeholder {
 }
 
 input[type=text] {
-    width: 350px;
+    width: 300px;
     height: 30px;
     border-radius: 2px;
     margin-bottom: 5px;
@@ -620,3 +578,115 @@ input[type=submit]:hover {
 .homepage-image{
     width: 100%;
 }
+
+#whatson {
+    float: left;
+    width: 500px;
+}
+
+#whatson-poster {
+    float: left;
+}
+
+#whatson-info {
+    float: left;
+}
+
+#films {
+    width: 65%;
+    overflow: hidden;
+    margin: 0 auto 100px auto;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #111111;
+    box-shadow: 0 2px 5px #111;
+}
+
+.details-list {
+    list-style: none;
+    padding: 0;
+}
+
+.details-list > li {
+    text-align: left;
+}
+
+.whatson-film {
+    margin-bottom: 100px;
+}
+
+#whatson h2 {
+    float: left;
+    margin-right: 15px;
+}
+
+#whatson img {
+    float: left;
+    padding-top: 8px;
+}
+
+.whatson-image {
+    width: 350px;
+    height: 500px;
+    border-radius: 5px;
+}
+
+#left-col-whatson {
+    float: left;
+    margin-right: 3%;
+    width: 40%;
+}
+
+#right-col-whatson {
+    float: left;
+    width: 57%;
+}
+
+.list-headers{
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.footer-cols-social {
+    margin: 0 auto;
+    width: 220px;
+    display: block;
+    overflow: hidden;
+}
+
+.whats-on-content {
+    margin: 50px 0;
+}
+
+.whats-on-content h1 {
+    margin-bottom: 50px;
+}
+
+.select-cinema {
+    width: 300px;
+    height: 40px;
+    border-radius: 4px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #000080;
+    color: #ffffff;
+    padding: 2px;
+}
+
+#search-label {
+    margin-left: 30px;
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+#issue {
+    max-width: 300px;
+    max-height: 400px;
+    width: 300px;
+    height: 100px;
+    border: 1px solid #111111;
+}
+
+
+
+
